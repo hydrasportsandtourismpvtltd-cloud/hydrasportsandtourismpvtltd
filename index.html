@@ -53,89 +53,101 @@ nav.scrolled{box-shadow:0 4px 40px rgba(13,71,161,0.14)}
 .nav-links a:hover::after{width:100%}
 .nav-cta{
   background:linear-gradient(135deg,var(--blue-dark),var(--blue));
-  color:white!important;padding:11px 26px;border-radius:6px;
-  box-shadow:0 4px 16px rgba(13,71,161,0.25);transition:all 0.2s!important
+  color:white!important;padding:12px 28px;border-radius:8px;
+  box-shadow:0 4px 16px rgba(13,71,161,0.22);transition:all 0.22s!important;
+  font-size:12px!important;letter-spacing:1.5px!important;font-weight:800!important;
+  position:relative;overflow:hidden
 }
+.nav-cta::before{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--gold),var(--gold-dark));
+  transform:scaleX(0);transform-origin:left;transition:transform 0.3s
+}
+.nav-cta:hover::before{transform:scaleX(1)}
 .nav-cta::after{display:none!important}
-.nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 24px rgba(13,71,161,0.35)!important;color:white!important}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(13,71,161,0.32)!important;color:white!important}
 
 /* ── HERO ── */
 #home{
   min-height:100vh;
-  background:linear-gradient(160deg,#07234A 0%,#0D47A1 45%,#1565C0 75%,#1976D2 100%);
+  background:#FFFFFF;
   display:flex;flex-direction:column;align-items:center;justify-content:center;
   text-align:center;padding:120px 5% 80px;position:relative;overflow:hidden
 }
 #home::before{
   content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse 80% 60% at 70% 30%,rgba(249,168,37,0.10) 0%,transparent 65%),
-             radial-gradient(ellipse 50% 80% at 20% 80%,rgba(21,101,192,0.3) 0%,transparent 60%);
+  background:radial-gradient(ellipse 60% 50% at 80% 10%,rgba(21,101,192,0.04) 0%,transparent 60%),
+             radial-gradient(ellipse 40% 40% at 10% 90%,rgba(249,168,37,0.05) 0%,transparent 60%);
   pointer-events:none
 }
-/* decorative circles */
 #home::after{
-  content:'';position:absolute;width:600px;height:600px;border-radius:50%;
-  border:1px solid rgba(255,255,255,0.04);top:-100px;right:-150px;pointer-events:none
+  content:'';position:absolute;width:700px;height:700px;border-radius:50%;
+  border:1px solid rgba(21,101,192,0.05);top:-200px;right:-200px;pointer-events:none
 }
 .hero-chip{
   display:inline-flex;align-items:center;gap:8px;
-  background:rgba(249,168,37,0.12);border:1px solid rgba(249,168,37,0.5);
+  background:rgba(21,101,192,0.07);border:1px solid rgba(21,101,192,0.2);
   border-radius:100px;padding:7px 20px;margin-bottom:32px;
   font-size:10.5px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;
-  color:var(--gold-light);position:relative;z-index:1
+  color:var(--blue-dark);position:relative;z-index:1
 }
 .chip-dot{width:7px;height:7px;background:var(--gold);border-radius:50%;animation:blink 1.6s ease-in-out infinite}
 @keyframes blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(1.4)}}
 .hero-logo-img{
-  width:160px;height:160px;object-fit:contain;margin-bottom:28px;
-  filter:drop-shadow(0 8px 32px rgba(0,0,0,0.35));position:relative;z-index:1;
+  width:180px;height:180px;object-fit:contain;margin-bottom:24px;
+  filter:drop-shadow(0 12px 40px rgba(13,71,161,0.18));position:relative;z-index:1;
   animation:floatLogo 4s ease-in-out infinite
 }
-@keyframes floatLogo{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes floatLogo{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
 .hero-title{
   font-family:'Bebas Neue',sans-serif;
   font-size:clamp(64px,12vw,130px);line-height:0.88;
-  color:white;letter-spacing:6px;margin-bottom:10px;
+  color:var(--blue-dark);letter-spacing:6px;margin-bottom:10px;
   position:relative;z-index:1
 }
 .hero-title .g{
-  background:linear-gradient(135deg,var(--gold-light),var(--gold),var(--gold-dark));
+  background:linear-gradient(135deg,var(--gold),var(--gold-dark));
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text
 }
 .hero-tagline{
-  font-size:clamp(11px,1.8vw,15px);font-weight:400;letter-spacing:5px;
-  text-transform:uppercase;color:rgba(255,255,255,0.6);
+  font-size:clamp(11px,1.8vw,15px);font-weight:600;letter-spacing:5px;
+  text-transform:uppercase;color:var(--muted);
   margin-bottom:20px;position:relative;z-index:1
 }
 .hero-desc{
   max-width:520px;font-size:16px;line-height:1.75;
-  color:rgba(255,255,255,0.72);margin:0 auto 44px;position:relative;z-index:1
+  color:var(--muted);margin:0 auto 44px;position:relative;z-index:1
 }
 .hero-btns{
   display:flex;gap:14px;flex-wrap:wrap;justify-content:center;
   margin-bottom:72px;position:relative;z-index:1
 }
 .btn-gold{
-  background:linear-gradient(135deg,var(--gold-light),var(--gold));color:#0F172A;
+  background:linear-gradient(135deg,var(--blue-dark),var(--blue));color:white;
   padding:15px 38px;border-radius:6px;font-weight:800;font-size:12.5px;
   letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;
-  box-shadow:0 6px 24px rgba(249,168,37,0.45);transition:all 0.22s
+  box-shadow:0 6px 24px rgba(13,71,161,0.3);transition:all 0.22s
 }
-.btn-gold:hover{transform:translateY(-3px);box-shadow:0 10px 36px rgba(249,168,37,0.55)}
+.btn-gold:hover{transform:translateY(-3px);box-shadow:0 10px 36px rgba(13,71,161,0.4)}
 .btn-ghost{
-  background:rgba(255,255,255,0.06);color:white;
-  border:1.5px solid rgba(255,255,255,0.35);
-  padding:15px 38px;border-radius:6px;font-weight:600;font-size:12.5px;
-  letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;transition:all 0.22s;
-  backdrop-filter:blur(6px)
+  background:white;color:var(--blue-dark);
+  border:2px solid var(--blue-dark);
+  padding:15px 38px;border-radius:6px;font-weight:700;font-size:12.5px;
+  letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;transition:all 0.22s
 }
-.btn-ghost:hover{background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.7)}
+.btn-ghost:hover{background:var(--blue-dark);color:white}
 .hero-stats{
-  display:flex;gap:56px;border-top:1px solid rgba(255,255,255,0.12);
-  padding-top:44px;flex-wrap:wrap;justify-content:center;position:relative;z-index:1
+  display:flex;gap:0;border-top:1px solid var(--border);
+  padding-top:44px;flex-wrap:wrap;justify-content:center;position:relative;z-index:1;
+  width:100%;max-width:900px
 }
-.hs-num{font-family:'Bebas Neue',sans-serif;font-size:54px;color:var(--gold);line-height:1}
-.hs-lbl{font-size:10.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-top:4px}
+.hero-stat-item{
+  flex:1;min-width:160px;padding:0 32px;
+  border-right:1px solid var(--border);text-align:center
+}
+.hero-stat-item:last-child{border-right:none}
+.hs-num{font-family:'Bebas Neue',sans-serif;font-size:54px;color:var(--blue-dark);line-height:1}
+.hs-lbl{font-size:10.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:4px}
 
 /* ── SECTION BASE ── */
 .section{padding:108px 6%}
@@ -208,27 +220,33 @@ nav.scrolled{box-shadow:0 4px 40px rgba(13,71,161,0.14)}
 .ach-lbl{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-top:8px;line-height:1.4}
 
 /* ── SPORTS ── */
-#sports{background:white}
+#sports{background:var(--off)}
 .sports-grid{
-  display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:14px;
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px;
   max-width:1200px;margin:0 auto
 }
 .sport-card{
-  background:var(--off);border:1.5px solid var(--border);border-radius:14px;
-  padding:28px 16px;text-align:center;
-  transition:all 0.25s;cursor:default;position:relative;overflow:hidden
+  background:white;border:1px solid var(--border);border-radius:16px;
+  padding:32px 24px 28px;text-align:left;
+  transition:all 0.28s;cursor:default;position:relative;overflow:hidden;
+  box-shadow:0 2px 12px rgba(13,71,161,0.04)
 }
 .sport-card::before{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));
-  opacity:0;transition:opacity 0.25s
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--blue-dark),var(--blue-mid));
+  transform:scaleX(0);transform-origin:left;transition:transform 0.3s
 }
-.sport-card:hover::before{opacity:1}
-.sport-card:hover{transform:translateY(-5px);box-shadow:0 14px 36px rgba(13,71,161,0.2);border-color:transparent}
-.sport-card:hover .s-emoji{transform:scale(1.18)}
-.sport-card:hover .s-name{color:white}
-.s-emoji{font-size:38px;display:block;margin-bottom:12px;transition:transform 0.25s;position:relative;z-index:1}
-.s-name{font-size:12.5px;font-weight:700;color:var(--text);transition:color 0.25s;position:relative;z-index:1;line-height:1.3}
+.sport-card:hover::before{transform:scaleX(1)}
+.sport-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(13,71,161,0.13);border-color:rgba(21,101,192,0.2)}
+.sport-card:hover .s-emoji{transform:scale(1.12) rotate(-5deg)}
+.sport-card:hover .s-name{color:var(--blue-dark)}
+.s-icon-wrap{
+  width:52px;height:52px;border-radius:12px;background:var(--blue-light);
+  display:flex;align-items:center;justify-content:center;margin-bottom:16px
+}
+.s-emoji{font-size:26px;display:block;transition:transform 0.28s;line-height:1}
+.s-name{font-size:14px;font-weight:800;color:var(--text);transition:color 0.28s;line-height:1.3;margin-bottom:6px}
+.s-desc{font-size:12px;color:var(--muted);line-height:1.55}
 
 /* ── TOURISM ── */
 #tourism{background:var(--off)}
@@ -411,10 +429,10 @@ footer{background:#07152B;color:white;padding:72px 6% 36px}
     <a href="#tourism" class="btn-ghost">Adventure Tourism</a>
   </div>
   <div class="hero-stats">
-    <div><div class="hs-num">5</div><div class="hs-lbl">Guinness World Records</div></div>
-    <div><div class="hs-num">22</div><div class="hs-lbl">Four World Record Holders</div></div>
-    <div><div class="hs-num">15</div><div class="hs-lbl">National Records</div></div>
-    <div><div class="hs-num">18+</div><div class="hs-lbl">Partner Schools</div></div>
+    <div class="hero-stat-item"><div class="hs-num">5</div><div class="hs-lbl">Guinness World Records</div></div>
+    <div class="hero-stat-item"><div class="hs-num">22</div><div class="hs-lbl">Four World Record Holders</div></div>
+    <div class="hero-stat-item"><div class="hs-num">15</div><div class="hs-lbl">National Records</div></div>
+    <div class="hero-stat-item"><div class="hs-num">18+</div><div class="hs-lbl">Partner Schools</div></div>
   </div>
 </section>
 
@@ -497,22 +515,22 @@ footer{background:#07152B;color:white;padding:72px 6% 36px}
   <h2 class="sec-title center">16 World-Class <em>Sports</em></h2>
   <p class="sec-desc center" style="margin:0 auto 48px">Professional coaching with focus on technical skills, strategy, and individual development — from beginner to national-level champions.</p>
   <div class="sports-grid reveal">
-    <div class="sport-card"><span class="s-emoji">🛼</span><div class="s-name">Roller Skating</div></div>
-    <div class="sport-card"><span class="s-emoji">🏒</span><div class="s-name">Hockey</div></div>
-    <div class="sport-card"><span class="s-emoji">🏍️</span><div class="s-name">Moto Sports</div></div>
-    <div class="sport-card"><span class="s-emoji">🏊</span><div class="s-name">Swimming</div></div>
-    <div class="sport-card"><span class="s-emoji">🏓</span><div class="s-name">Table Tennis</div></div>
-    <div class="sport-card"><span class="s-emoji">🤸</span><div class="s-name">Kho-Kho</div></div>
-    <div class="sport-card"><span class="s-emoji">⚽</span><div class="s-name">Football</div></div>
-    <div class="sport-card"><span class="s-emoji">🏏</span><div class="s-name">Cricket</div></div>
-    <div class="sport-card"><span class="s-emoji">🏀</span><div class="s-name">Basketball</div></div>
-    <div class="sport-card"><span class="s-emoji">🏸</span><div class="s-name">Badminton</div></div>
-    <div class="sport-card"><span class="s-emoji">🤼</span><div class="s-name">Kabaddi</div></div>
-    <div class="sport-card"><span class="s-emoji">🥋</span><div class="s-name">Karate</div></div>
-    <div class="sport-card"><span class="s-emoji">🚴</span><div class="s-name">Cycling</div></div>
-    <div class="sport-card"><span class="s-emoji">🏹</span><div class="s-name">Archery</div></div>
-    <div class="sport-card"><span class="s-emoji">🛹</span><div class="s-name">Rollball</div></div>
-    <div class="sport-card"><span class="s-emoji">🎯</span><div class="s-name">Aeroskateball</div></div>
+    <div class="sport-card"><div class="s-icon-wrap"><span class="s-emoji">🛼</span></div><div class="s-name">Roller Skating</div><div class="s-desc">Speed, balance & precision on wheels — from beginner glides to championship level.</div></div>
+    <div class="sport-card"><div class="s-icon-wrap"><span class="s-emoji">🏒</span></div><div class="s-name">Hockey</div><div class="s-desc">Team strategy, stickwork and agility training for competitive play.</div></div>
+    <div class="sport-card"><div class="s-icon-wrap"><span class="s-emoji">🏍️</span></div><div class="s-name">Moto Sports</div><div class="s-desc">Throttle control, track techniques and safety training for young riders.</div></div>
+    <div class="sport-card"><div class="s-icon-wrap"><span class="s-emoji">🏊</span></div><div class="s-name">Swimming</div><div class="s-desc">All strokes — freestyle to butterfly — with endurance and technique focus.</div></div>
+    <div class="sport-card"><div class="s-icon-wrap"><span class="s-emoji">🏓</span></div><div class="s-name">Table Tennis</div><div class="s-desc">Fast-paced reflexes, spin mastery and tournament-ready match play.</div></div>
+    <div class="sport-card"><div class="s-icon-wrap"><span class="s-emoji">🤸</span></div><div class="s-name">Kho-Kho</div><div class="s-desc">Speed, agility and team coordination in India's beloved traditional sport.</div></div>
+    <div class="sport-card"><div class="s-icon-wrap"><span class="s-emoji">⚽</span></div><div class="s-name">Football</div><div class="s-desc">Ball control, tactical positioning and team gameplay from grassroots to glory.</div></div>
+    <div class="sport-card"><div class="s-icon-wrap"><span class="s-emoji">🏏</span></div><div class="s-name">Cricket</div><div class="s-desc">Batting, bowling and fielding drills built for school to state-level competition.</div></div>
+    <div class="sport-card"><div class="s-icon-wrap"><span class="s-emoji">🏀</span></div><div class="s-name">Basketball</div><div class="s-desc">Dribbling, shooting and defensive play for aspiring court champions.</div></div>
+    <div class="sport-card"><div class="s-icon-wrap"><span class="s-emoji">🏸</span></div><div class="s-name">Badminton</div><div class="s-desc">Footwork, shuttle control and match strategy for singles and doubles play.</div></div>
+    <div class="sport-card"><div class="s-icon-wrap"><span class="s-emoji">🤼</span></div><div class="s-name">Kabaddi</div><div class="s-desc">Strength, breath control and raiding techniques in this high-energy contact sport.</div></div>
+    <div class="sport-card"><div class="s-icon-wrap"><span class="s-emoji">🥋</span></div><div class="s-name">Karate</div><div class="s-desc">Ryu Karate discipline, kata forms, and sparring with certified instructors.</div></div>
+    <div class="sport-card"><div class="s-icon-wrap"><span class="s-emoji">🚴</span></div><div class="s-name">Cycling</div><div class="s-desc">Road technique, stamina building and competitive cycling coaching.</div></div>
+    <div class="sport-card"><div class="s-icon-wrap"><span class="s-emoji">🏹</span></div><div class="s-name">Archery</div><div class="s-desc">Focus, form and precision shooting — traditional and recurve bow training.</div></div>
+    <div class="sport-card"><div class="s-icon-wrap"><span class="s-emoji">🛹</span></div><div class="s-name">Rollball</div><div class="s-desc">India's fastest-growing sport — skating combined with handball on a unique court.</div></div>
+    <div class="sport-card"><div class="s-icon-wrap"><span class="s-emoji">🎯</span></div><div class="s-name">Aeroskateball</div><div class="s-desc">Aerial skating skills and ball play — a dynamic, crowd-thrilling discipline.</div></div>
   </div>
 </section>
 
@@ -596,7 +614,7 @@ footer{background:#07152B;color:white;padding:72px 6% 36px}
   <div class="con-grid reveal">
     <div class="con-cards">
       <div class="con-card"><div class="con-card-ico">📍</div><div><h4>Our Location</h4><p>Hydra Sports &amp; Tourism Pvt. Ltd.<br>Kerala, India</p></div></div>
-      <div class="con-card"><div class="con-card-ico">📞</div><div><h4>Phone</h4><p>+91 XXXXX XXXXX</p></div></div>
+      <div class="con-card"><div class="con-card-ico">📞</div><div><h4>Phone</h4><p><a href="tel:+918714520362" style="color:inherit;text-decoration:none">+91 87145 20362</a></p></div></div>
       <div class="con-card"><div class="con-card-ico">📧</div><div><h4>Email</h4><p>info@hydrasports.in</p></div></div>
       <div class="con-card"><div class="con-card-ico">🕐</div><div><h4>Working Hours</h4><p>Mon – Sat: 6:00 AM – 8:00 PM<br>Sunday: 7:00 AM – 6:00 PM</p></div></div>
     </div>
@@ -606,7 +624,7 @@ footer{background:#07152B;color:white;padding:72px 6% 36px}
         <div class="fg"><label>Last Name</label><input type="text" placeholder="e.g. Kumar"></div>
       </div>
       <div class="fg"><label>Email Address</label><input type="email" placeholder="you@email.com"></div>
-      <div class="fg"><label>Phone</label><input type="tel" placeholder="+91 XXXXX XXXXX"></div>
+      <div class="fg"><label>Phone</label><input type="tel" placeholder="+91 87145 20362"></div>
       <div class="fg">
         <label>Interested In</label>
         <select>
@@ -645,7 +663,7 @@ footer{background:#07152B;color:white;padding:72px 6% 36px}
       <p>Inspiring and training young talents to achieve excellence in sports through discipline, dedication, and teamwork. Your champions, our pride.</p>
       <div class="foot-socials">
         <a class="s-btn" href="#">📘</a>
-        <a class="s-btn" href="#">📸</a>
+        <a class="s-btn" href="https://www.instagram.com/hydra_roller_skating_club/" target="_blank" rel="noopener" title="Instagram">📸</a>
         <a class="s-btn" href="#">🎥</a>
         <a class="s-btn" href="#">🐦</a>
       </div>
@@ -677,7 +695,7 @@ footer{background:#07152B;color:white;padding:72px 6% 36px}
       <h5>Find Us</h5>
       <div class="foot-info">
         <div class="fi"><span class="fi-ico">📍</span><div class="fi-text"><strong>Address</strong>Kerala, India</div></div>
-        <div class="fi"><span class="fi-ico">📞</span><div class="fi-text"><strong>Phone</strong>+91 XXXXX XXXXX</div></div>
+        <div class="fi"><span class="fi-ico">📞</span><div class="fi-text"><strong>Phone</strong>+91 87145 20362</div></div>
         <div class="fi"><span class="fi-ico">📧</span><div class="fi-text"><strong>Email</strong>info@hydrasports.in</div></div>
         <div class="fi"><span class="fi-ico">🕐</span><div class="fi-text"><strong>Hours</strong>Mon–Sat 6AM–8PM · Sun 7AM–6PM</div></div>
       </div>
