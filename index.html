@@ -136,16 +136,27 @@ nav.scrolled{box-shadow:0 4px 40px rgba(13,71,161,0.14)}
 
 /* ── SPORTS ── */
 #sports{background:var(--off)}
-.sports-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px}
-.sport-card{background:white;border:1px solid var(--border);border-radius:16px;padding:28px 22px;text-align:left;transition:all 0.28s;position:relative;overflow:hidden;box-shadow:0 2px 12px rgba(13,71,161,0.04)}
-.sport-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue-dark),var(--blue-mid));transform:scaleX(0);transform-origin:left;transition:transform 0.3s}
-.sport-card:hover::before{transform:scaleX(1)}
+.sports-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:28px 22px}
+.sport-card{background:white;border:1px solid var(--border);border-radius:16px;text-align:left;transition:all 0.28s;position:relative;overflow:hidden;box-shadow:0 2px 12px rgba(13,71,161,0.04);padding-bottom:22px}
 .sport-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(13,71,161,0.13);border-color:rgba(21,101,192,0.2)}
 .sport-card:hover .s-name{color:var(--blue-dark)}
-.s-icon-wrap{width:48px;height:48px;border-radius:12px;background:var(--blue-light);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
-.s-icon-wrap svg{width:24px;height:24px}
-.s-name{font-size:14px;font-weight:800;transition:color 0.28s;margin-bottom:6px}
-.s-desc{font-size:12px;color:var(--muted);line-height:1.55}
+.sport-thumb{height:130px;position:relative;display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
+.sport-thumb::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,20,40,0.12),rgba(7,20,40,0.55))}
+.sport-thumb svg{position:absolute;top:14px;left:14px;width:22px;height:22px;opacity:0.85;z-index:1}
+.s-icon-wrap{position:relative;z-index:2;width:60px;height:60px;border-radius:50%;background:white;display:flex;align-items:center;justify-content:center;transform:translateY(30px);box-shadow:0 8px 22px rgba(13,71,161,0.28);border:3px solid var(--off)}
+.s-icon-wrap svg{width:26px;height:26px;position:static;opacity:1}
+.sport-body{padding:42px 20px 0}
+.s-name{font-size:14.5px;font-weight:800;transition:color 0.28s;margin-bottom:6px}
+.s-desc{font-size:12px;color:var(--muted);line-height:1.55;margin-bottom:14px}
+.s-more{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--blue-dark)}
+.s-more svg{width:13px;height:13px;transition:transform 0.22s}
+.sport-card:hover .s-more svg{transform:translateX(5px)}
+.st1{background:linear-gradient(135deg,#0D47A1,#42A5F5)}
+.st2{background:linear-gradient(135deg,#00695C,#26C6DA)}
+.st3{background:linear-gradient(135deg,#E65100,#FFB74D)}
+.st4{background:linear-gradient(135deg,#1B5E20,#66BB6A)}
+.st5{background:linear-gradient(135deg,#4E342E,#A1887F)}
+.st6{background:linear-gradient(135deg,#4527A0,#7E57C2)}
 
 /* ── TOURISM ── */
 #tourism{background:var(--off)}
@@ -227,6 +238,18 @@ footer{background:#07152B;color:white;padding:64px 6% 32px}
 .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease}
 .reveal.on{opacity:1;transform:none}
 
+/* ── PRELOADER (reveal animation like reference) ── */
+#preloader{position:fixed;inset:0;z-index:99999;background:#FFFFFF;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity 0.6s ease,visibility 0.6s ease}
+#preloader.hide{opacity:0;visibility:hidden;pointer-events:none}
+.pl-logo{font-family:'Bebas Neue',sans-serif;font-weight:700;font-size:clamp(52px,13vw,120px);letter-spacing:8px;text-transform:uppercase;white-space:nowrap;background:linear-gradient(135deg,var(--gold),var(--gold-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:inline-block;clip-path:inset(0 100% 0 0);animation:plReveal 1.3s cubic-bezier(.65,0,.35,1) forwards}
+.pl-sub{margin-top:12px;font-size:clamp(10px,2vw,13px);font-weight:800;letter-spacing:5px;text-transform:uppercase;color:var(--muted);opacity:0;animation:plFadeIn 0.6s ease forwards;animation-delay:1.1s}
+.pl-bar{width:220px;height:3px;background:var(--border);border-radius:4px;margin-top:36px;overflow:hidden}
+.pl-bar-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--gold),var(--gold-dark));border-radius:4px;animation:plLoad 1.3s cubic-bezier(.65,0,.35,1) forwards}
+.pl-pct{margin-top:14px;font-size:12px;font-weight:700;letter-spacing:2px;color:var(--muted)}
+@keyframes plReveal{to{clip-path:inset(0 0% 0 0)}}
+@keyframes plLoad{to{width:100%}}
+@keyframes plFadeIn{to{opacity:0.85}}
+
 @media(max-width:900px){
   .about-wrap,.ins-wrap,.con-grid,.foot-grid{grid-template-columns:1fr}
   .frow{grid-template-columns:1fr}
@@ -238,6 +261,13 @@ footer{background:#07152B;color:white;padding:64px 6% 32px}
 </style>
 </head>
 <body>
+
+<div id="preloader">
+  <div class="pl-logo">HYDRA</div>
+  <div class="pl-sub">Sports &amp; Tourism</div>
+  <div class="pl-bar"><div class="pl-bar-fill"></div></div>
+  <div class="pl-pct" id="plPct">0%</div>
+</div>
 
 <nav id="mainNav">
   <a href="#home" class="nav-logo">
@@ -267,12 +297,6 @@ footer{background:#07152B;color:white;padding:64px 6% 32px}
   <div class="hero-btns">
     <a href="#sports" class="btn-gold">Explore Sports</a>
     <a href="#tourism" class="btn-ghost">Adventure Tourism</a>
-  </div>
-  <div class="hero-stats">
-    <div class="hero-stat-item"><div class="hs-num">5</div><div class="hs-lbl">Guinness Records</div></div>
-    <div class="hero-stat-item"><div class="hs-num">16</div><div class="hs-lbl">Sports Offered</div></div>
-    <div class="hero-stat-item"><div class="hs-num">18+</div><div class="hs-lbl">Partner Schools</div></div>
-    <div class="hero-stat-item"><div class="hs-num">22</div><div class="hs-lbl">Record Holders</div></div>
   </div>
 </section>
 
@@ -344,24 +368,7 @@ footer{background:#07152B;color:white;padding:64px 6% 32px}
       <h2 class="sec-title">16 World-Class <em>Sports</em></h2>
       <p class="sec-desc">Professional coaching with focus on technical skills, strategy, and individual development — from beginner to national-level champions.</p>
     </div>
-    <div class="sports-grid reveal">
-      <div class="sport-card"><div class="s-icon-wrap"><svg viewBox="0 0 24 24" fill="none"><circle cx="7" cy="18" r="2" stroke="#1565C0" stroke-width="1.6"/><circle cx="17" cy="18" r="2" stroke="#1565C0" stroke-width="1.6"/><path d="M4 20h20M9 12l3-6 3 6" stroke="#1565C0" stroke-width="1.6"/></svg></div><div class="s-name">Roller Skating</div><div class="s-desc">Speed, balance &amp; precision on wheels — beginner glides to championship level.</div></div>
-      <div class="sport-card"><div class="s-icon-wrap"><svg viewBox="0 0 24 24" fill="none"><path d="M4 20 14 6M14 6l6 2-2 6" stroke="#1565C0" stroke-width="1.6" stroke-linecap="round"/><circle cx="9" cy="16" r="1.6" fill="#1565C0"/></svg></div><div class="s-name">Hockey</div><div class="s-desc">Team strategy, stickwork and agility training for competitive play.</div></div>
-      <div class="sport-card"><div class="s-icon-wrap"><svg viewBox="0 0 24 24" fill="none"><circle cx="7" cy="18" r="2.4" stroke="#1565C0" stroke-width="1.6"/><circle cx="17" cy="18" r="2.4" stroke="#1565C0" stroke-width="1.6"/><path d="M7 18h10l-2-8H9Z" stroke="#1565C0" stroke-width="1.6" stroke-linejoin="round"/></svg></div><div class="s-name">Moto Sports</div><div class="s-desc">Throttle control, track techniques and safety training for young riders.</div></div>
-      <div class="sport-card"><div class="s-icon-wrap"><svg viewBox="0 0 24 24" fill="none"><path d="M3 15c1.5-1.5 3-1.5 4.5 0s3 1.5 4.5 0 3-1.5 4.5 0 3 1.5 4.5 0" stroke="#1565C0" stroke-width="1.6"/><circle cx="12" cy="8" r="2.6" stroke="#1565C0" stroke-width="1.6"/></svg></div><div class="s-name">Swimming</div><div class="s-desc">All strokes — freestyle to butterfly — with endurance and technique focus.</div></div>
-      <div class="sport-card"><div class="s-icon-wrap"><svg viewBox="0 0 24 24" fill="none"><ellipse cx="9" cy="9" rx="4" ry="5" transform="rotate(-30 9 9)" stroke="#1565C0" stroke-width="1.6"/><path d="M12 12l6 6" stroke="#1565C0" stroke-width="1.6"/><circle cx="19" cy="19" r="1.6" fill="#1565C0"/></svg></div><div class="s-name">Table Tennis</div><div class="s-desc">Fast-paced reflexes, spin mastery and tournament-ready match play.</div></div>
-      <div class="sport-card"><div class="s-icon-wrap"><svg viewBox="0 0 24 24" fill="none"><path d="M4 8c4 3 12 3 16 0M4 16c4-3 12-3 16 0" stroke="#1565C0" stroke-width="1.6"/></svg></div><div class="s-name">Kho-Kho</div><div class="s-desc">Speed, agility and team coordination in India's beloved traditional sport.</div></div>
-      <div class="sport-card"><div class="s-icon-wrap"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="#1565C0" stroke-width="1.6"/><path d="M4 12h16M12 4c2 2.5 2 15.5 0 16M12 4c-2 2.5-2 15.5 0 16" stroke="#1565C0" stroke-width="1.3"/></svg></div><div class="s-name">Football</div><div class="s-desc">Ball control, tactical positioning and team gameplay from grassroots to glory.</div></div>
-      <div class="sport-card"><div class="s-icon-wrap"><svg viewBox="0 0 24 24" fill="none"><path d="M6 18 16 8" stroke="#1565C0" stroke-width="2" stroke-linecap="round"/><rect x="15" y="4" width="5" height="5" rx="1" transform="rotate(45 17.5 6.5)" stroke="#1565C0" stroke-width="1.6"/></svg></div><div class="s-name">Cricket</div><div class="s-desc">Batting, bowling and fielding drills built for school to state-level competition.</div></div>
-      <div class="sport-card"><div class="s-icon-wrap"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="#1565C0" stroke-width="1.6"/><path d="M4 12h16M12 4v16" stroke="#1565C0" stroke-width="1.3"/></svg></div><div class="s-name">Basketball</div><div class="s-desc">Dribbling, shooting and defensive play for aspiring court champions.</div></div>
-      <div class="sport-card"><div class="s-icon-wrap"><svg viewBox="0 0 24 24" fill="none"><ellipse cx="12" cy="12" rx="3" ry="8" stroke="#1565C0" stroke-width="1.6"/><path d="M9 12h6" stroke="#1565C0" stroke-width="1.6"/></svg></div><div class="s-name">Badminton</div><div class="s-desc">Footwork, shuttle control and match strategy for singles and doubles play.</div></div>
-      <div class="sport-card"><div class="s-icon-wrap"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12c2-4 6-6 8-6M20 12c-2 4-6 6-8 6M4 12l4 3M20 12l-4-3" stroke="#1565C0" stroke-width="1.6"/></svg></div><div class="s-name">Kabaddi</div><div class="s-desc">Strength, breath control and raiding techniques in this high-energy sport.</div></div>
-      <div class="sport-card"><div class="s-icon-wrap"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3 5 6v6c0 5 3 7.5 7 9 4-1.5 7-4 7-9V6l-7-3Z" stroke="#1565C0" stroke-width="1.6"/></svg></div><div class="s-name">Karate</div><div class="s-desc">Ryu Karate discipline, kata forms, and sparring with certified instructors.</div></div>
-      <div class="sport-card"><div class="s-icon-wrap"><svg viewBox="0 0 24 24" fill="none"><circle cx="6" cy="17" r="3" stroke="#1565C0" stroke-width="1.6"/><circle cx="18" cy="17" r="3" stroke="#1565C0" stroke-width="1.6"/><path d="M6 17 10 8h4l4 9M10 8l3 5" stroke="#1565C0" stroke-width="1.6"/></svg></div><div class="s-name">Cycling</div><div class="s-desc">Road technique, stamina building and competitive cycling coaching.</div></div>
-      <div class="sport-card"><div class="s-icon-wrap"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="#1565C0" stroke-width="1.4"/><circle cx="12" cy="12" r="4.5" stroke="#1565C0" stroke-width="1.4"/><path d="M12 12 20 4" stroke="#1565C0" stroke-width="1.6"/></svg></div><div class="s-name">Archery</div><div class="s-desc">Focus, form and precision shooting — traditional and recurve bow training.</div></div>
-      <div class="sport-card"><div class="s-icon-wrap"><svg viewBox="0 0 24 24" fill="none"><circle cx="7" cy="18" r="2" stroke="#1565C0" stroke-width="1.6"/><circle cx="17" cy="18" r="2" stroke="#1565C0" stroke-width="1.6"/><circle cx="12" cy="8" r="3" stroke="#1565C0" stroke-width="1.6"/><path d="M4 20h20" stroke="#1565C0" stroke-width="1.6"/></svg></div><div class="s-name">Rollball</div><div class="s-desc">India's fastest-growing sport — skating combined with handball on court.</div></div>
-      <div class="sport-card"><div class="s-icon-wrap"><svg viewBox="0 0 24 24" fill="none"><path d="M4 18 10 7l4 5 3-4 3 10" stroke="#1565C0" stroke-width="1.6" stroke-linejoin="round"/><circle cx="10" cy="7" r="1.5" fill="#1565C0"/></svg></div><div class="s-name">Aeroskateball</div><div class="s-desc">Aerial skating skills and ball play — a dynamic, crowd-thrilling discipline.</div></div>
-    </div>
+    <div class="sports-grid reveal" id="sportsGrid"></div>
   </div>
 </section>
 
@@ -526,6 +533,60 @@ footer{background:#07152B;color:white;padding:64px 6% 32px}
 </footer>
 
 <script>
+  // Sports data + card rendering (matching reference "service card" style:
+  // photo-style header, circular icon badge overlapping the image, title, desc, Learn more link)
+  const sportsData = [
+    {name:"Roller Skating", desc:"Speed, balance & precision on wheels — beginner glides to championship level.", cls:"st1", icon:'<circle cx="7" cy="18" r="2" stroke="#1565C0" stroke-width="1.6"/><circle cx="17" cy="18" r="2" stroke="#1565C0" stroke-width="1.6"/><path d="M4 20h20M9 12l3-6 3 6" stroke="#1565C0" stroke-width="1.6"/>'},
+    {name:"Hockey", desc:"Team strategy, stickwork and agility training for competitive play.", cls:"st2", icon:'<path d="M4 20 14 6M14 6l6 2-2 6" stroke="#1565C0" stroke-width="1.6" stroke-linecap="round"/><circle cx="9" cy="16" r="1.6" fill="#1565C0"/>'},
+    {name:"Moto Sports", desc:"Throttle control, track techniques and safety training for young riders.", cls:"st3", icon:'<circle cx="7" cy="18" r="2.4" stroke="#1565C0" stroke-width="1.6"/><circle cx="17" cy="18" r="2.4" stroke="#1565C0" stroke-width="1.6"/><path d="M7 18h10l-2-8H9Z" stroke="#1565C0" stroke-width="1.6" stroke-linejoin="round"/>'},
+    {name:"Swimming", desc:"All strokes — freestyle to butterfly — with endurance and technique focus.", cls:"st4", icon:'<path d="M3 15c1.5-1.5 3-1.5 4.5 0s3 1.5 4.5 0 3-1.5 4.5 0 3 1.5 4.5 0" stroke="#1565C0" stroke-width="1.6"/><circle cx="12" cy="8" r="2.6" stroke="#1565C0" stroke-width="1.6"/>'},
+    {name:"Table Tennis", desc:"Fast-paced reflexes, spin mastery and tournament-ready match play.", cls:"st5", icon:'<ellipse cx="9" cy="9" rx="4" ry="5" transform="rotate(-30 9 9)" stroke="#1565C0" stroke-width="1.6"/><path d="M12 12l6 6" stroke="#1565C0" stroke-width="1.6"/><circle cx="19" cy="19" r="1.6" fill="#1565C0"/>'},
+    {name:"Kho-Kho", desc:"Speed, agility and team coordination in India's beloved traditional sport.", cls:"st6", icon:'<path d="M4 8c4 3 12 3 16 0M4 16c4-3 12-3 16 0" stroke="#1565C0" stroke-width="1.6"/>'},
+    {name:"Football", desc:"Ball control, tactical positioning and team gameplay from grassroots to glory.", cls:"st1", icon:'<circle cx="12" cy="12" r="8" stroke="#1565C0" stroke-width="1.6"/><path d="M4 12h16M12 4c2 2.5 2 15.5 0 16M12 4c-2 2.5-2 15.5 0 16" stroke="#1565C0" stroke-width="1.3"/>'},
+    {name:"Cricket", desc:"Batting, bowling and fielding drills built for school to state-level competition.", cls:"st2", icon:'<path d="M6 18 16 8" stroke="#1565C0" stroke-width="2" stroke-linecap="round"/><rect x="15" y="4" width="5" height="5" rx="1" transform="rotate(45 17.5 6.5)" stroke="#1565C0" stroke-width="1.6"/>'},
+    {name:"Basketball", desc:"Dribbling, shooting and defensive play for aspiring court champions.", cls:"st3", icon:'<circle cx="12" cy="12" r="8" stroke="#1565C0" stroke-width="1.6"/><path d="M4 12h16M12 4v16" stroke="#1565C0" stroke-width="1.3"/>'},
+    {name:"Badminton", desc:"Footwork, shuttle control and match strategy for singles and doubles play.", cls:"st4", icon:'<ellipse cx="12" cy="12" rx="3" ry="8" stroke="#1565C0" stroke-width="1.6"/><path d="M9 12h6" stroke="#1565C0" stroke-width="1.6"/>'},
+    {name:"Kabaddi", desc:"Strength, breath control and raiding techniques in this high-energy sport.", cls:"st5", icon:'<path d="M4 12c2-4 6-6 8-6M20 12c-2 4-6 6-8 6M4 12l4 3M20 12l-4-3" stroke="#1565C0" stroke-width="1.6"/>'},
+    {name:"Karate", desc:"Ryu Karate discipline, kata forms, and sparring with certified instructors.", cls:"st6", icon:'<path d="M12 3 5 6v6c0 5 3 7.5 7 9 4-1.5 7-4 7-9V6l-7-3Z" stroke="#1565C0" stroke-width="1.6"/>'},
+    {name:"Cycling", desc:"Road technique, stamina building and competitive cycling coaching.", cls:"st1", icon:'<circle cx="6" cy="17" r="3" stroke="#1565C0" stroke-width="1.6"/><circle cx="18" cy="17" r="3" stroke="#1565C0" stroke-width="1.6"/><path d="M6 17 10 8h4l4 9M10 8l3 5" stroke="#1565C0" stroke-width="1.6"/>'},
+    {name:"Archery", desc:"Focus, form and precision shooting — traditional and recurve bow training.", cls:"st2", icon:'<circle cx="12" cy="12" r="8" stroke="#1565C0" stroke-width="1.4"/><circle cx="12" cy="12" r="4.5" stroke="#1565C0" stroke-width="1.4"/><path d="M12 12 20 4" stroke="#1565C0" stroke-width="1.6"/>'},
+    {name:"Rollball", desc:"India's fastest-growing sport — skating combined with handball on court.", cls:"st3", icon:'<circle cx="7" cy="18" r="2" stroke="#1565C0" stroke-width="1.6"/><circle cx="17" cy="18" r="2" stroke="#1565C0" stroke-width="1.6"/><circle cx="12" cy="8" r="3" stroke="#1565C0" stroke-width="1.6"/><path d="M4 20h20" stroke="#1565C0" stroke-width="1.6"/>'},
+    {name:"Aeroskateball", desc:"Aerial skating skills and ball play — a dynamic, crowd-thrilling discipline.", cls:"st4", icon:'<path d="M4 18 10 7l4 5 3-4 3 10" stroke="#1565C0" stroke-width="1.6" stroke-linejoin="round"/><circle cx="10" cy="7" r="1.5" fill="#1565C0"/>'}
+  ];
+
+  // Preloader — orange HYDRA reveal + counting percentage, then fade out
+  (function(){
+    const pctEl = document.getElementById('plPct');
+    const duration = 1300;
+    const start = performance.now();
+    function tick(now){
+      const p = Math.min(1, (now - start) / duration);
+      pctEl.textContent = Math.round(p * 100) + '%';
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  })();
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      const pl = document.getElementById('preloader');
+      if (pl) pl.classList.add('hide');
+    }, 1500);
+  });
+
+  const sportsGrid = document.getElementById('sportsGrid');
+  sportsGrid.innerHTML = sportsData.map(s => `
+    <div class="sport-card">
+      <div class="sport-thumb ${s.cls}">
+        <div class="s-icon-wrap"><svg viewBox="0 0 24 24" fill="none">${s.icon}</svg></div>
+      </div>
+      <div class="sport-body">
+        <div class="s-name">${s.name}</div>
+        <div class="s-desc">${s.desc}</div>
+        <a href="#contact" class="s-more">Learn more <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+  `).join('');
+
   // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   const obs = new IntersectionObserver(entries => {
