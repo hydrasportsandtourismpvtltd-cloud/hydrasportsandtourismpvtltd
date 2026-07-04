@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<!-- saved from url=(0045)https://hydrasportsandtourismpvtltd.com/#home -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hydra Sports &amp; Tourism Pvt. Ltd.</title>
-<link href="./Hydra Sports &amp; Tourism Pvt. Ltd._files/css2" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --blue:#1565C0;--blue-dark:#0D47A1;--blue-mid:#1976D2;--blue-light:#E3F0FF;
   --gold:#F9A825;--gold-light:#FFD54F;--gold-dark:#E65100;
@@ -14,7 +15,13 @@
   --shadow:0 4px 24px rgba(13,71,161,0.08);
 }
 html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--white);color:var(--text);overflow-x:hidden}
+body{font-family:'Inter',sans-serif;background:var(--white);color:var(--text);overflow-x:hidden;line-height:1.5}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{font-family:inherit;border:none;background:none;cursor:pointer}
+img,svg{display:block}
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible{outline:3px solid var(--gold); outline-offset:2px}
+@media (prefers-reduced-motion: reduce){*{animation-duration:0.01ms !important;transition-duration:0.01ms !important}}
 
 /* ── NAV ── */
 nav{
@@ -27,410 +34,251 @@ nav{
   transition:box-shadow 0.3s;
 }
 nav.scrolled{box-shadow:0 4px 40px rgba(13,71,161,0.14)}
-.nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none}
-.nav-logo img{height:54px;width:54px;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(13,71,161,0.18))}
+.nav-logo{display:flex;align-items:center;gap:12px}
+.nav-logo svg{flex:0 0 auto}
 .nav-brand{line-height:1.1}
-.nav-brand-name{
-  font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:3px;
-  color:var(--blue-dark);display:block
-}
-.nav-brand-sub{
-  font-size:9.5px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;
-  color:var(--gold-dark);display:block
-}
-.nav-links{display:flex;gap:32px;list-style:none;align-items:center}
-.nav-links a{
-  text-decoration:none;font-size:12.5px;font-weight:700;
-  letter-spacing:1.5px;text-transform:uppercase;color:var(--text);
-  position:relative;padding-bottom:3px;transition:color 0.2s
-}
-.nav-links a::after{
-  content:'';position:absolute;bottom:0;left:0;width:0;height:2px;
-  background:linear-gradient(90deg,var(--gold),var(--gold-dark));
-  transition:width 0.3s;border-radius:2px
-}
+.nav-brand-name{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:3px;color:var(--blue-dark);display:block}
+.nav-brand-sub{font-size:9.5px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold-dark);display:block}
+.nav-links{display:flex;gap:32px;align-items:center}
+.nav-links a{font-size:12.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--text);position:relative;padding-bottom:3px;transition:color 0.2s}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold-dark));transition:width 0.3s;border-radius:2px}
 .nav-links a:hover{color:var(--blue)}
 .nav-links a:hover::after{width:100%}
-.nav-cta{
-  background:linear-gradient(135deg,var(--blue-dark),var(--blue));
-  color:white!important;padding:12px 28px;border-radius:8px;
-  box-shadow:0 4px 16px rgba(13,71,161,0.22);transition:all 0.22s!important;
-  font-size:12px!important;letter-spacing:1.5px!important;font-weight:800!important;
-  position:relative;overflow:hidden
+.nav-links a.active{color:var(--blue)}
+.nav-cta{background:linear-gradient(135deg,var(--blue-dark),var(--blue));color:white!important;padding:12px 28px;border-radius:8px;box-shadow:0 4px 16px rgba(13,71,161,0.22);transition:all 0.22s;font-size:12px!important;letter-spacing:1.5px!important;font-weight:800!important;position:relative;overflow:hidden}
+.nav-cta::after{content:none}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(13,71,161,0.32);color:white}
+.nav-toggle{display:none;width:32px;height:32px;align-items:center;justify-content:center}
+.nav-toggle span,.nav-toggle span::before,.nav-toggle span::after{content:'';display:block;width:22px;height:2px;background:var(--blue-dark);position:relative;transition:0.2s}
+.nav-toggle span::before{position:absolute;top:-7px}
+.nav-toggle span::after{position:absolute;top:7px}
+@media(max-width:900px){
+  .nav-links{position:fixed;top:80px;left:0;right:0;background:white;flex-direction:column;gap:0;padding:12px 0;border-bottom:1px solid var(--border);transform:translateY(-8px);opacity:0;pointer-events:none;transition:0.2s}
+  .nav-links.open{transform:translateY(0);opacity:1;pointer-events:auto}
+  .nav-links li{width:100%;text-align:center}
+  .nav-links a{display:block;padding:14px 0}
+  .nav-cta{display:inline-block;margin:8px auto}
+  .nav-toggle{display:flex}
 }
-.nav-cta::before{
-  content:'';position:absolute;bottom:0;left:0;right:0;height:3px;
-  background:linear-gradient(90deg,var(--gold),var(--gold-dark));
-  transform:scaleX(0);transform-origin:left;transition:transform 0.3s
-}
-.nav-cta:hover::before{transform:scaleX(1)}
-.nav-cta::after{display:none!important}
-.nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(13,71,161,0.32)!important;color:white!important}
 
 /* ── HERO ── */
-#home{
-  min-height:100vh;
-  background:#FFFFFF;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:120px 5% 80px;position:relative;overflow:hidden
-}
-#home::before{
-  content:'';position:absolute;inset:0;
-  background-size:cover;background-position:center;background-repeat:no-repeat;
-  opacity:0.10;
-  pointer-events:none;z-index:0
-}
-#home::after{
-  content:'';position:absolute;width:700px;height:700px;border-radius:50%;
-  border:1px solid rgba(21,101,192,0.05);top:-200px;right:-200px;pointer-events:none;z-index:0
-}
-.hero-chip{
-  display:inline-flex;align-items:center;gap:8px;
-  background:rgba(21,101,192,0.07);border:1px solid rgba(21,101,192,0.2);
-  border-radius:100px;padding:7px 20px;margin-bottom:32px;
-  font-size:10.5px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;
-  color:var(--blue-dark);position:relative;z-index:1
-}
+#home{min-height:100vh;background:linear-gradient(180deg,#FFFFFF 0%,var(--blue-light) 130%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:140px 5% 80px;position:relative;overflow:hidden}
+#home::after{content:'';position:absolute;width:700px;height:700px;border-radius:50%;border:1px solid rgba(21,101,192,0.08);top:-260px;right:-220px;pointer-events:none}
+#home .ripple{position:absolute;border-radius:50%;border:1px solid rgba(21,101,192,0.06);left:50%;top:50%;transform:translate(-50%,-50%);pointer-events:none}
+.hero-chip{display:inline-flex;align-items:center;gap:8px;background:rgba(21,101,192,0.07);border:1px solid rgba(21,101,192,0.2);border-radius:100px;padding:7px 20px;margin-bottom:32px;font-size:10.5px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--blue-dark);position:relative;z-index:1}
 .chip-dot{width:7px;height:7px;background:var(--gold);border-radius:50%;animation:blink 1.6s ease-in-out infinite}
 @keyframes blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(1.4)}}
-.hero-logo-img{
-  width:180px;height:180px;object-fit:contain;margin-bottom:24px;
-  filter:drop-shadow(0 12px 40px rgba(13,71,161,0.18));position:relative;z-index:1;
-  animation:floatLogo 4s ease-in-out infinite
-}
-@keyframes floatLogo{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
-.hero-title{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:clamp(64px,12vw,130px);line-height:0.88;
-  color:var(--blue-dark);letter-spacing:6px;margin-bottom:10px;
-  position:relative;z-index:1
-}
-.hero-title .g{
-  background:linear-gradient(135deg,var(--gold),var(--gold-dark));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text
-}
-.hero-tagline{
-  font-size:clamp(11px,1.8vw,15px);font-weight:600;letter-spacing:5px;
-  text-transform:uppercase;color:var(--muted);
-  margin-bottom:20px;position:relative;z-index:1
-}
-.hero-desc{
-  max-width:520px;font-size:16px;line-height:1.75;
-  color:var(--muted);margin:0 auto 44px;position:relative;z-index:1
-}
-.hero-btns{
-  display:flex;gap:14px;flex-wrap:wrap;justify-content:center;
-  margin-bottom:72px;position:relative;z-index:1
-}
-.btn-gold{
-  background:linear-gradient(135deg,var(--blue-dark),var(--blue));color:white;
-  padding:15px 38px;border-radius:6px;font-weight:800;font-size:12.5px;
-  letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;
-  box-shadow:0 6px 24px rgba(13,71,161,0.3);transition:all 0.22s
-}
+.hero-logo{width:128px;height:128px;margin-bottom:28px;position:relative;z-index:1;animation:floatLogo 4s ease-in-out infinite;filter:drop-shadow(0 10px 30px rgba(13,71,161,0.25))}
+@keyframes floatLogo{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(58px,11vw,120px);line-height:0.9;color:var(--blue-dark);letter-spacing:5px;position:relative;z-index:1}
+.hero-title .g{background:linear-gradient(135deg,var(--gold),var(--gold-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-tagline{font-size:clamp(11px,1.8vw,15px);font-weight:600;letter-spacing:5px;text-transform:uppercase;color:var(--muted);margin:10px 0 22px;position:relative;z-index:1}
+.hero-desc{max-width:540px;font-size:16px;line-height:1.75;color:var(--muted);margin:0 auto 44px;position:relative;z-index:1}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-bottom:64px;position:relative;z-index:1}
+.btn-gold,.btn-ghost{padding:15px 36px;border-radius:6px;font-weight:800;font-size:12.5px;letter-spacing:1.5px;text-transform:uppercase;transition:all 0.22s;display:inline-flex;align-items:center;gap:8px}
+.btn-gold{background:linear-gradient(135deg,var(--blue-dark),var(--blue));color:white;box-shadow:0 6px 24px rgba(13,71,161,0.3)}
 .btn-gold:hover{transform:translateY(-3px);box-shadow:0 10px 36px rgba(13,71,161,0.4)}
-.btn-ghost{
-  background:white;color:var(--blue-dark);
-  border:2px solid var(--blue-dark);
-  padding:15px 38px;border-radius:6px;font-weight:700;font-size:12.5px;
-  letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;transition:all 0.22s
-}
+.btn-ghost{background:white;color:var(--blue-dark);border:2px solid var(--blue-dark)}
 .btn-ghost:hover{background:var(--blue-dark);color:white}
-.hero-stats{
-  display:flex;gap:0;border-top:1px solid var(--border);
-  padding-top:44px;flex-wrap:wrap;justify-content:center;position:relative;z-index:1;
-  width:100%;max-width:900px
-}
-.hero-stat-item{
-  flex:1;min-width:160px;padding:0 32px;
-  border-right:1px solid var(--border);text-align:center
-}
+.hero-stats{display:flex;gap:0;border-top:1px solid var(--border);padding-top:40px;flex-wrap:wrap;justify-content:center;position:relative;z-index:1;width:100%;max-width:900px}
+.hero-stat-item{flex:1;min-width:150px;padding:0 28px;border-right:1px solid var(--border);text-align:center}
 .hero-stat-item:last-child{border-right:none}
-.hs-num{font-family:'Bebas Neue',sans-serif;font-size:54px;color:var(--blue-dark);line-height:1}
-.hs-lbl{font-size:10.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:4px}
+.hs-num{font-family:'Bebas Neue',sans-serif;font-size:50px;color:var(--blue-dark);line-height:1}
+.hs-lbl{font-size:10px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);margin-top:6px}
 
 /* ── SECTION BASE ── */
-.section{padding:108px 6%}
-.eyebrow{font-size:11px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--gold-dark);margin-bottom:10px}
-.sec-title{font-family:'Playfair Display',serif;font-size:clamp(34px,5vw,56px);font-weight:900;line-height:1.08;margin-bottom:18px}
+.section{padding:104px 6%}
+.section-inner{max-width:1200px;margin:0 auto}
+.eyebrow{font-size:11px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--gold-dark);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.center .eyebrow{justify-content:center}
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(32px,4.6vw,52px);font-weight:900;line-height:1.1;margin-bottom:16px}
 .sec-title em{font-style:normal;color:var(--blue)}
-.sec-desc{font-size:17px;line-height:1.78;color:var(--muted);max-width:600px;margin-bottom:56px}
-.divider{width:52px;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-dark));border-radius:3px;margin-bottom:24px}
-.center{text-align:center}.center .divider{margin:0 auto 24px}.center .sec-desc{margin:0 auto 56px}
+.sec-desc{font-size:16.5px;line-height:1.75;color:var(--muted);max-width:600px;margin-bottom:52px}
+.divider{width:52px;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-dark));border-radius:3px;margin-bottom:22px}
+.center{text-align:center}
+.center .divider{margin:0 auto 22px}
+.center .sec-desc{margin:0 auto 48px}
 
 /* ── ABOUT ── */
 #about{background:var(--off)}
-.about-wrap{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-.about-left .tag-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:32px}
-.atag{
-  background:var(--blue-light);color:var(--blue-dark);
-  font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
-  padding:6px 14px;border-radius:100px
-}
-.about-right{display:flex;flex-direction:column;gap:24px}
-.about-feature{
-  display:flex;gap:20px;align-items:flex-start;
-  background:white;border-radius:14px;padding:24px;
-  border:1px solid var(--border);
-  box-shadow:0 2px 16px rgba(13,71,161,0.04);
-  transition:transform 0.25s,box-shadow 0.25s
-}
+.about-wrap{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.tag-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+.atag{background:var(--blue-light);color:var(--blue-dark);font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:6px 14px;border-radius:100px}
+.about-right{display:flex;flex-direction:column;gap:20px}
+.about-feature{display:flex;gap:18px;align-items:flex-start;background:white;border-radius:14px;padding:22px;border:1px solid var(--border);box-shadow:0 2px 16px rgba(13,71,161,0.04);transition:transform 0.25s,box-shadow 0.25s}
 .about-feature:hover{transform:translateY(-3px);box-shadow:0 8px 32px rgba(13,71,161,0.1)}
-.af-icon{
-  width:50px;height:50px;border-radius:12px;flex-shrink:0;
-  display:flex;align-items:center;justify-content:center;font-size:22px
-}
+.af-icon{width:48px;height:48px;border-radius:12px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
 .af-blue{background:var(--blue-light)}
 .af-gold{background:#FFF8E1}
 .af-green{background:#E8F5E9}
-.af-body h4{font-size:15px;font-weight:700;color:var(--text);margin-bottom:5px}
+.af-body h4{font-size:15px;font-weight:700;margin-bottom:5px}
 .af-body p{font-size:13.5px;line-height:1.6;color:var(--muted)}
 .mv-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
-.mv-box{border-radius:12px;padding:24px;border-left:3px solid var(--blue)}
-.mv-box.gold{border-left-color:var(--gold)}
-.mv-box h5{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:2px;color:var(--blue-dark);margin-bottom:8px}
+.mv-box{border-radius:12px;padding:22px;border-left:3px solid var(--blue);background:#EEF4FF}
+.mv-box.gold{border-left-color:var(--gold);background:#FFF8E1}
+.mv-box h5{font-family:'Bebas Neue',sans-serif;font-size:17px;letter-spacing:2px;color:var(--blue-dark);margin-bottom:8px}
 .mv-box.gold h5{color:var(--gold-dark)}
-.mv-box p{font-size:13px;line-height:1.65;color:var(--muted)}
+.mv-box p{font-size:12.8px;line-height:1.6;color:var(--muted)}
 
 /* ── ACHIEVEMENTS ── */
-#achievements{
-  background:linear-gradient(155deg,#06203E 0%,#0D47A1 50%,#1565C0 100%);
-  text-align:center;position:relative;overflow:hidden
-}
-#achievements::before{
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse 70% 50% at 80% 20%,rgba(249,168,37,0.08),transparent);
-  pointer-events:none
-}
+#achievements{background:linear-gradient(155deg,#06203E 0%,#0D47A1 50%,#1565C0 100%);text-align:center;position:relative;overflow:hidden}
+#achievements::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 80% 20%,rgba(249,168,37,0.08),transparent);pointer-events:none}
 #achievements .sec-title{color:white}
 #achievements .sec-title em{color:var(--gold)}
-#achievements .sec-desc{color:rgba(255,255,255,0.65);margin:0 auto 60px}
-.ach-grid{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
-  max-width:1100px;margin:0 auto;position:relative;z-index:1
-}
-.ach-card{
-  background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);
-  border-radius:18px;padding:44px 24px;
-  transition:transform 0.3s,background 0.3s,border-color 0.3s
-}
+#achievements .sec-desc{color:rgba(255,255,255,0.65);margin:0 auto 56px}
+.ach-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative;z-index:1}
+.ach-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:18px;padding:38px 20px;transition:transform 0.3s,background 0.3s,border-color 0.3s}
 .ach-card:hover{transform:translateY(-8px);background:rgba(249,168,37,0.1);border-color:rgba(249,168,37,0.5)}
-.ach-icon{font-size:36px;margin-bottom:14px}
-.ach-num{font-family:'Bebas Neue',sans-serif;font-size:70px;color:var(--gold);line-height:1}
-.ach-lbl{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-top:8px;line-height:1.4}
+.ach-icon{width:38px;height:38px;margin:0 auto 14px}
+.ach-num{font-family:'Bebas Neue',sans-serif;font-size:62px;color:var(--gold);line-height:1}
+.ach-lbl{font-size:11.5px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-top:8px;line-height:1.4}
+@media(max-width:900px){.ach-grid{grid-template-columns:repeat(2,1fr)}}
 
 /* ── SPORTS ── */
 #sports{background:var(--off)}
-.sports-grid{
-  display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px;
-  max-width:1200px;margin:0 auto
-}
-.sport-card{
-  background:white;border:1px solid var(--border);border-radius:16px;
-  padding:32px 24px 28px;text-align:left;
-  transition:all 0.28s;cursor:default;position:relative;overflow:hidden;
-  box-shadow:0 2px 12px rgba(13,71,161,0.04)
-}
-.sport-card::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:3px;
-  background:linear-gradient(90deg,var(--blue-dark),var(--blue-mid));
-  transform:scaleX(0);transform-origin:left;transition:transform 0.3s
-}
+.sports-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px}
+.sport-card{background:white;border:1px solid var(--border);border-radius:16px;padding:28px 22px;text-align:left;transition:all 0.28s;position:relative;overflow:hidden;box-shadow:0 2px 12px rgba(13,71,161,0.04)}
+.sport-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue-dark),var(--blue-mid));transform:scaleX(0);transform-origin:left;transition:transform 0.3s}
 .sport-card:hover::before{transform:scaleX(1)}
 .sport-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(13,71,161,0.13);border-color:rgba(21,101,192,0.2)}
-.sport-card:hover .s-emoji{transform:scale(1.12) rotate(-5deg)}
 .sport-card:hover .s-name{color:var(--blue-dark)}
-.s-icon-wrap{
-  width:52px;height:52px;border-radius:12px;background:var(--blue-light);
-  display:flex;align-items:center;justify-content:center;margin-bottom:16px
-}
-.s-emoji{font-size:26px;display:block;transition:transform 0.28s;line-height:1}
-.s-name{font-size:14px;font-weight:800;color:var(--text);transition:color 0.28s;line-height:1.3;margin-bottom:6px}
+.s-icon-wrap{width:48px;height:48px;border-radius:12px;background:var(--blue-light);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.s-icon-wrap svg{width:24px;height:24px}
+.s-name{font-size:14px;font-weight:800;transition:color 0.28s;margin-bottom:6px}
 .s-desc{font-size:12px;color:var(--muted);line-height:1.55}
 
 /* ── TOURISM ── */
 #tourism{background:var(--off)}
-.tour-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:28px;max-width:1200px;margin:0 auto}
-.tour-card{
-  background:white;border-radius:18px;overflow:hidden;
-  border:1px solid var(--border);
-  box-shadow:0 4px 24px rgba(13,71,161,0.05);
-  transition:transform 0.3s,box-shadow 0.3s
-}
+.tour-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:26px}
+.tour-card{background:white;border-radius:18px;overflow:hidden;border:1px solid var(--border);box-shadow:0 4px 24px rgba(13,71,161,0.05);transition:transform 0.3s,box-shadow 0.3s}
 .tour-card:hover{transform:translateY(-10px);box-shadow:0 20px 56px rgba(13,71,161,0.14)}
-.tour-thumb{
-  height:170px;display:flex;align-items:center;justify-content:center;font-size:80px;
-  position:relative;overflow:hidden
-}
-.tour-thumb::after{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(to bottom,transparent 40%,rgba(0,0,0,0.2));
-}
+.tour-thumb{height:150px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.tour-thumb svg{width:56px;height:56px;position:relative;z-index:1}
 .t1{background:linear-gradient(135deg,#0D47A1,#29B6F6)}
 .t2{background:linear-gradient(135deg,#0a3579,#1565C0)}
 .t3{background:linear-gradient(135deg,#4E342E,#8D6E63)}
 .t4{background:linear-gradient(135deg,#1B5E20,#66BB6A)}
-.tour-body{padding:26px}
-.tour-tag{
-  display:inline-block;background:var(--blue-light);color:var(--blue-dark);
-  font-size:10.5px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;
-  padding:4px 12px;border-radius:100px;margin-bottom:12px
-}
-.tour-body h3{font-family:'Playfair Display',serif;font-size:21px;font-weight:700;margin-bottom:10px}
-.tour-body p{font-size:13.5px;line-height:1.68;color:var(--muted)}
+.tour-body{padding:24px}
+.tour-tag{display:inline-block;background:var(--blue-light);color:var(--blue-dark);font-size:10.5px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;padding:4px 12px;border-radius:100px;margin-bottom:12px}
+.tour-body h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;margin-bottom:9px}
+.tour-body p{font-size:13.3px;line-height:1.65;color:var(--muted)}
 
 /* ── INSIGHTS ── */
 #insights{background:white}
-.ins-wrap{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:5fr 6fr;gap:72px;align-items:start}
-.ins-mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:36px}
-.ins-mini{
-  background:var(--off);border-radius:14px;padding:24px;text-align:center;
-  border:1px solid var(--border)
-}
-.ins-mini .ico{font-size:34px;margin-bottom:10px}
-.ins-mini h4{font-size:14px;font-weight:700;color:var(--text);margin-bottom:6px}
-.ins-mini p{font-size:12.5px;line-height:1.6;color:var(--muted)}
-.ins-list{list-style:none;display:flex;flex-direction:column;gap:14px}
-.ins-item{
-  display:flex;gap:16px;align-items:flex-start;
-  padding:18px 20px;border-radius:12px;
-  background:var(--off);border-left:3px solid var(--blue);
-  font-size:13.5px;line-height:1.65;color:var(--muted);
-  transition:border-color 0.2s,background 0.2s
-}
+.ins-wrap{display:grid;grid-template-columns:5fr 6fr;gap:64px;align-items:start}
+.ins-mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:32px}
+.ins-mini{background:var(--off);border-radius:14px;padding:22px;text-align:center;border:1px solid var(--border)}
+.ins-mini svg{width:28px;height:28px;margin:0 auto 10px}
+.ins-mini h4{font-size:13.5px;font-weight:700;margin-bottom:6px}
+.ins-mini p{font-size:12px;line-height:1.55;color:var(--muted)}
+.ins-list{display:flex;flex-direction:column;gap:12px}
+.ins-item{display:flex;gap:14px;align-items:flex-start;padding:16px 18px;border-radius:12px;background:var(--off);border-left:3px solid var(--blue);font-size:13px;line-height:1.6;color:var(--muted);transition:border-color 0.2s,background 0.2s}
 .ins-item:hover{border-color:var(--gold);background:#FFFBF0}
-.ins-item .ico{font-size:20px;flex-shrink:0;margin-top:1px}
+.ins-item svg{width:18px;height:18px;flex-shrink:0;margin-top:1px;color:var(--blue)}
 
 /* ── CONTACT ── */
-#contact{
-  background:linear-gradient(155deg,#07203F 0%,#0D47A1 55%,#1565C0 100%);
-  color:white
-}
+#contact{background:linear-gradient(155deg,#07203F 0%,#0D47A1 55%,#1565C0 100%);color:white}
 #contact .sec-title{color:white}
 #contact .sec-title em{color:var(--gold)}
 #contact .sec-desc{color:rgba(255,255,255,0.68)}
-.con-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1.2fr;gap:64px;align-items:start}
-.con-cards{display:flex;flex-direction:column;gap:18px}
-.con-card{
-  background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);
-  border-radius:14px;padding:22px;display:flex;gap:16px;align-items:flex-start;
-  transition:background 0.2s,border-color 0.2s
-}
+.con-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:56px;align-items:start}
+.con-cards{display:flex;flex-direction:column;gap:16px}
+.con-card{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:14px;padding:20px;display:flex;gap:14px;align-items:flex-start;transition:background 0.2s,border-color 0.2s}
 .con-card:hover{background:rgba(255,255,255,0.11);border-color:rgba(249,168,37,0.4)}
-.con-card-ico{font-size:26px;flex-shrink:0;margin-top:1px}
+.con-card svg{width:22px;height:22px;flex-shrink:0;margin-top:2px;color:var(--gold)}
 .con-card h4{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:5px}
-.con-card p{font-size:13.5px;color:rgba(255,255,255,0.82);line-height:1.5}
-.con-form{display:flex;flex-direction:column;gap:15px}
-.frow{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.con-card p{font-size:13px;color:rgba(255,255,255,0.82);line-height:1.5}
+.con-form{display:flex;flex-direction:column;gap:14px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .fg{display:flex;flex-direction:column;gap:6px}
 .fg label{font-size:10.5px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5)}
-.fg input,.fg textarea,.fg select{
-  background:rgba(255,255,255,0.09);border:1.5px solid rgba(255,255,255,0.16);
-  border-radius:8px;padding:13px 16px;color:white;font-size:14px;font-family:inherit;outline:none;
-  transition:border-color 0.2s
-}
+.fg input,.fg textarea,.fg select{background:rgba(255,255,255,0.09);border:1.5px solid rgba(255,255,255,0.16);border-radius:8px;padding:12px 15px;color:white;font-size:14px;font-family:inherit;outline:none;transition:border-color 0.2s}
 .fg input::placeholder,.fg textarea::placeholder{color:rgba(255,255,255,0.35)}
 .fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--gold)}
 .fg select option{background:#0D47A1;color:white}
-.fg textarea{resize:vertical;min-height:96px}
-.btn-send{
-  background:linear-gradient(135deg,var(--gold-light),var(--gold));
-  color:#0F172A;border:none;padding:15px 38px;border-radius:8px;
-  font-weight:800;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;
-  cursor:pointer;transition:all 0.22s;
-  box-shadow:0 4px 20px rgba(249,168,37,0.38);align-self:flex-start
-}
+.fg textarea{resize:vertical;min-height:90px}
+.btn-send{background:linear-gradient(135deg,var(--gold-light),var(--gold));color:#0F172A;padding:15px 36px;border-radius:8px;font-weight:800;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;transition:all 0.22s;box-shadow:0 4px 20px rgba(249,168,37,0.38);align-self:flex-start;display:inline-flex;align-items:center;gap:8px}
 .btn-send:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(249,168,37,0.52)}
+.form-note{font-size:11.5px;color:rgba(255,255,255,0.45)}
 
 /* ── FOOTER ── */
-footer{background:#07152B;color:white;padding:72px 6% 36px}
-.foot-grid{
-  display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:48px;
-  max-width:1200px;margin:0 auto;
-  padding-bottom:52px;border-bottom:1px solid rgba(255,255,255,0.08)
-}
-.foot-brand{display:flex;flex-direction:column;gap:0}
+footer{background:#07152B;color:white;padding:64px 6% 32px}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:44px;max-width:1200px;margin:0 auto;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,0.08)}
 .foot-logo-row{display:flex;align-items:center;gap:12px;margin-bottom:16px}
-.foot-logo-row img{height:48px;width:48px;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(0,0,0,0.4))}
-.foot-brand-name{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:3px;color:white}
+.foot-brand-name{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:3px;color:white}
 .foot-brand-sub{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}
-.foot-brand p{font-size:13.5px;line-height:1.72;color:rgba(255,255,255,0.45);max-width:280px}
-.foot-socials{display:flex;gap:10px;margin-top:20px}
-.s-btn{
-  width:36px;height:36px;border-radius:8px;
-  background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.1);
-  display:flex;align-items:center;justify-content:center;font-size:16px;
-  text-decoration:none;transition:background 0.2s
-}
+.foot-brand p{font-size:13px;line-height:1.7;color:rgba(255,255,255,0.45);max-width:280px}
+.foot-socials{display:flex;gap:10px;margin-top:18px}
+.s-btn{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;transition:background 0.2s}
+.s-btn svg{width:16px;height:16px}
 .s-btn:hover{background:rgba(249,168,37,0.2)}
-.foot-col h5{font-size:10.5px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
-.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
-.foot-col ul li a{font-size:13.5px;color:rgba(255,255,255,0.48);text-decoration:none;transition:color 0.2s}
+.foot-col h5{font-size:10.5px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.foot-col ul{display:flex;flex-direction:column;gap:9px}
+.foot-col ul li a{font-size:13px;color:rgba(255,255,255,0.48);transition:color 0.2s}
 .foot-col ul li a:hover{color:var(--gold)}
-.foot-info{display:flex;flex-direction:column;gap:0}
-.fi{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.06)}
+.fi{display:flex;gap:12px;align-items:flex-start;padding:11px 0;border-bottom:1px solid rgba(255,255,255,0.06)}
 .fi:last-child{border:none}
-.fi-ico{font-size:16px;flex-shrink:0;margin-top:2px;opacity:0.7}
-.fi-text{font-size:13px;color:rgba(255,255,255,0.52);line-height:1.55}
-.fi-text strong{display:block;color:rgba(255,255,255,0.8);font-size:12px;margin-bottom:2px}
-.foot-bottom{
-  max-width:1200px;margin:32px auto 0;
-  display:flex;justify-content:space-between;align-items:center;
-  font-size:12px;color:rgba(255,255,255,0.28)
-}
+.fi svg{width:15px;height:15px;flex-shrink:0;margin-top:2px;color:var(--gold);opacity:0.85}
+.fi-text{font-size:12.5px;color:rgba(255,255,255,0.52);line-height:1.5}
+.fi-text strong{display:block;color:rgba(255,255,255,0.8);font-size:11.5px;margin-bottom:2px}
+.foot-bottom{max-width:1200px;margin:28px auto 0;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:rgba(255,255,255,0.28);flex-wrap:wrap;gap:8px}
 .foot-bottom span{color:var(--gold-dark)}
 
-/* ── REVEAL ── */
-.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.75s ease,transform 0.75s ease}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease}
 .reveal.on{opacity:1;transform:none}
 
-/* ── RESPONSIVE ── */
 @media(max-width:900px){
   .about-wrap,.ins-wrap,.con-grid,.foot-grid{grid-template-columns:1fr}
-  .ach-grid{grid-template-columns:repeat(2,1fr)}
   .frow{grid-template-columns:1fr}
   .foot-grid{gap:32px}
 }
 @media(max-width:600px){
-  .nav-links{gap:14px}.nav-links a{font-size:10px}
-  .ach-grid{grid-template-columns:repeat(2,1fr)}
+  .hero-stat-item{min-width:44%;border-right:none;padding:10px 0}
 }
-  </style>
+</style>
 </head>
 <body>
 
-  <!-- ── NAVBAR ── -->
-<nav id="mainNav" class="scrolled">
-  <a href="https://hydrasportsandtourismpvtltd.com/#home" class="nav-logo">
+<nav id="mainNav">
+  <a href="#home" class="nav-logo">
+    <img src="logo.png" alt="Hydra Sports & Tourism logo" width="46" height="46" style="object-fit:contain">
     <div class="nav-brand">
       <span class="nav-brand-name">HYDRA</span>
       <span class="nav-brand-sub">Sports &amp; Tourism Pvt. Ltd.</span>
     </div>
   </a>
-  <ul class="nav-links">
-    <li><a href="https://hydrasportsandtourismpvtltd.com/#home">Home</a></li>
-    <li><a href="https://hydrasportsandtourismpvtltd.com/#about" style="">About</a></li>
-    <li><a href="https://hydrasportsandtourismpvtltd.com/#sports" style="color: var(--blue);">Sports</a></li>
-    <li><a href="https://hydrasportsandtourismpvtltd.com/#tourism" style="">Tourism</a></li>
-    <li><a href="https://hydrasportsandtourismpvtltd.com/#contact" class="nav-cta" style="">Contact Us</a></li>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home" class="active">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#sports">Sports</a></li>
+    <li><a href="#tourism">Tourism</a></li>
+    <li><a href="#contact" class="nav-cta">Contact Us</a></li>
   </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span></button>
 </nav>
 
-<!-- ── HERO ── -->
 <section id="home">
+  <svg class="ripple" width="900" height="900" viewBox="0 0 900 900"><circle cx="450" cy="450" r="380" fill="none" stroke="#1565C0" stroke-opacity="0.05"/><circle cx="450" cy="450" r="300" fill="none" stroke="#1565C0" stroke-opacity="0.05"/></svg>
   <div class="hero-chip"><span class="chip-dot"></span>Kerala's Premier Sports &amp; Tourism Company</div>
+  <img class="hero-logo" src="logo.png" alt="Hydra Sports & Tourism logo" style="object-fit:contain">
   <h1 class="hero-title">HYDRA<br><span class="g">SPORTS</span></h1>
   <p class="hero-tagline">&amp; Tourism Pvt. Ltd.</p>
   <p class="hero-desc">Training young champions through discipline, dedication, and teamwork. From world-class sports academies to thrilling adventure tourism — Hydra is where legends begin.</p>
   <div class="hero-btns">
-    <a href="https://hydrasportsandtourismpvtltd.com/#sports" class="btn-gold">Explore Sports</a>
-    <a href="https://hydrasportsandtourismpvtltd.com/#tourism" class="btn-ghost">Adventure Tourism</a>
- 
+    <a href="#sports" class="btn-gold">Explore Sports</a>
+    <a href="#tourism" class="btn-ghost">Adventure Tourism</a>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat-item"><div class="hs-num">5</div><div class="hs-lbl">Guinness Records</div></div>
+    <div class="hero-stat-item"><div class="hs-num">16</div><div class="hs-lbl">Sports Offered</div></div>
+    <div class="hero-stat-item"><div class="hs-num">18+</div><div class="hs-lbl">Partner Schools</div></div>
+    <div class="hero-stat-item"><div class="hs-num">22</div><div class="hs-lbl">Record Holders</div></div>
+  </div>
+</section>
 
-<!-- ── ABOUT ── -->
 <section id="about" class="section">
-  <div class="about-wrap">
-    <div class="about-left reveal on">
+  <div class="section-inner about-wrap">
+    <div class="reveal">
       <div class="eyebrow">About Hydra</div>
       <div class="divider"></div>
       <h2 class="sec-title">Where <em>Champions</em><br>Are Made</h2>
@@ -442,210 +290,189 @@ footer{background:#07152B;color:white;padding:72px 6% 36px}
         <span class="atag">World Record Holders</span>
       </div>
       <div class="mv-row">
-        <div class="mv-box" style="background:#EEF4FF">
+        <div class="mv-box">
           <h5>Mission</h5>
           <p>To inspire and train young talents to achieve excellence through discipline, dedication, and teamwork.</p>
         </div>
-        <div class="mv-box gold" style="background:#FFF8E1">
+        <div class="mv-box gold">
           <h5>Vision</h5>
           <p>To become a leading sports company nurturing future champions with strong values and skills.</p>
         </div>
       </div>
     </div>
-    <div class="about-right reveal on" style="transition-delay:0.12s">
+    <div class="about-right reveal" style="transition-delay:0.1s">
       <div class="about-feature">
-        <div class="af-icon af-blue">🏆</div>
-        <div class="af-body">
-          <h4>World Record Legacy</h4>
-          <p>5 Guinness World Records and 22 Four World Record holders — Hydra sets the benchmark for sporting excellence in India.</p>
-        </div>
+        <div class="af-icon af-blue"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M7 4h10v4a5 5 0 0 1-10 0V4Z" stroke="#0D47A1" stroke-width="1.8"/><path d="M7 6H4a2 2 0 0 0 2 4M17 6h3a2 2 0 0 1-2 4" stroke="#0D47A1" stroke-width="1.8"/><path d="M9 16h6M12 13v6" stroke="#0D47A1" stroke-width="1.8"/></svg></div>
+        <div class="af-body"><h4>World Record Legacy</h4><p>5 Guinness World Records and 22 record holders — Hydra sets the benchmark for sporting excellence in India.</p></div>
       </div>
       <div class="about-feature">
-        <div class="af-icon af-gold">👨‍🏫</div>
-        <div class="af-body">
-          <h4>Expert Coaching Staff</h4>
-          <p>Friendly, approachable coaches who give individual attention to every child — patient, motivating, and results-driven.</p>
-        </div>
+        <div class="af-icon af-gold"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.4" stroke="#E65100" stroke-width="1.8"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6" stroke="#E65100" stroke-width="1.8"/></svg></div>
+        <div class="af-body"><h4>Expert Coaching Staff</h4><p>Friendly, approachable coaches who give individual attention to every child — patient, motivating, and results-driven.</p></div>
       </div>
       <div class="about-feature">
-        <div class="af-icon af-blue">📊</div>
-        <div class="af-body">
-          <h4>Structured Skill Levels</h4>
-          <p>Beginner, Intermediate, and Advanced tracks ensure every student progresses at their own pace with clear milestones.</p>
-        </div>
+        <div class="af-icon af-blue"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 19V10M12 19V5M19 19v-7" stroke="#0D47A1" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <div class="af-body"><h4>Structured Skill Levels</h4><p>Beginner, Intermediate, and Advanced tracks ensure every student progresses at their own pace with clear milestones.</p></div>
       </div>
       <div class="about-feature">
-        <div class="af-icon af-green">🌿</div>
-        <div class="af-body">
-          <h4>Sports + Adventure Tourism</h4>
-          <p>Beyond academics, we offer kayaking, ATV rides, boating and mud tourism — a complete physical and mental growth ecosystem.</p>
-        </div>
+        <div class="af-icon af-green"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 21c-5-3-8-6.5-8-10.5A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 8 4.5C20 14.5 17 18 12 21Z" stroke="#1B5E20" stroke-width="1.8"/></svg></div>
+        <div class="af-body"><h4>Sports + Adventure Tourism</h4><p>Beyond academics, we offer kayaking, ATV rides, boating and mud tourism — a complete physical and mental growth ecosystem.</p></div>
       </div>
-        </div>
+    </div>
   </div>
 </section>
 
-<!-- ── ACHIEVEMENTS ── -->
 <section id="achievements" class="section center">
-  <div class="eyebrow">Our Legacy</div>
-  <div class="divider"></div>
-  <h2 class="sec-title">Records that <em>Define</em> Us</h2>
-  <p class="sec-desc">From Guinness benchmarks to national milestones — Hydra's story is told in trophies, titles, and triumphs.</p>
-  <div class="ach-grid reveal on">
-    <div class="ach-card"><div class="ach-icon"></div><div class="ach-num">5</div><div class="ach-lbl">Guinness World Records</div></div>
-    <div class="ach-card"><div class="ach-icon"></div><div class="ach-num">22</div><div class="ach-lbl">Four World Record Holders</div></div>
-    <div class="ach-card"><div class="ach-icon"></div><div class="ach-num">15</div><div class="ach-lbl">National Records</div></div>
-    <div class="ach-card"><div class="ach-icon"></div><div class="ach-num">18+</div><div class="ach-lbl">Partner Schools</div></div>
+  <div class="section-inner">
+    <div class="eyebrow">Our Legacy</div>
+    <div class="divider"></div>
+    <h2 class="sec-title">Records that <em>Define</em> Us</h2>
+    <p class="sec-desc">From Guinness benchmarks to national milestones — Hydra's story is told in trophies, titles, and triumphs.</p>
+    <div class="ach-grid reveal">
+      <div class="ach-card"><svg class="ach-icon" viewBox="0 0 24 24" fill="none"><path d="M8 4h8v4a4 4 0 0 1-8 0V4Z" stroke="#F9A825" stroke-width="1.8"/><path d="M8 6H5a2 2 0 0 0 2 4M16 6h3a2 2 0 0 1-2 4" stroke="#F9A825" stroke-width="1.8"/><path d="M10 17h4M12 13v6" stroke="#F9A825" stroke-width="1.8"/></svg><div class="ach-num">5</div><div class="ach-lbl">Guinness World Records</div></div>
+      <div class="ach-card"><svg class="ach-icon" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="9" r="5" stroke="#F9A825" stroke-width="1.8"/><path d="M9 13.5 7.5 21 12 18.5 16.5 21 15 13.5" stroke="#F9A825" stroke-width="1.8"/></svg><div class="ach-num">22</div><div class="ach-lbl">Four World Record Holders</div></div>
+      <div class="ach-card"><svg class="ach-icon" viewBox="0 0 24 24" fill="none"><path d="M4 19h16M6 19V9l3-4 3 4 3-4 3 4v10" stroke="#F9A825" stroke-width="1.8" stroke-linejoin="round"/></svg><div class="ach-num">15</div><div class="ach-lbl">National Records</div></div>
+      <div class="ach-card"><svg class="ach-icon" viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="16" height="13" rx="1.5" stroke="#F9A825" stroke-width="1.8"/><path d="M8 4v4M16 4v4M4 11h16" stroke="#F9A825" stroke-width="1.8"/></svg><div class="ach-num">18+</div><div class="ach-lbl">Partner Schools</div></div>
+    </div>
   </div>
 </section>
 
-<!-- ── SPORTS ── -->
 <section id="sports" class="section">
-  <div class="eyebrow center">Our Programs</div>
-  <div class="divider" style="margin:0 auto 24px"></div>
-  <h2 class="sec-title center">16 World-Class <em>Sports</em></h2>
-  <p class="sec-desc center" style="margin:0 auto 48px">Professional coaching with focus on technical skills, strategy, and individual development — from beginner to national-level champions.</p>
-  <div class="sports-grid reveal on">
-    <div class="sport-card"><div class="s-icon-wrap"><span class="s-emoji">🛼</span></div><div class="s-name">Roller Skating</div><div class="s-desc">Speed, balance &amp; precision on wheels — from beginner glides to championship level.</div></div>
-    <div class="sport-card"><div class="s-icon-wrap"><span class="s-emoji">🏒</span></div><div class="s-name">Hockey</div><div class="s-desc">Team strategy, stickwork and agility training for competitive play.</div></div>
-    <div class="sport-card"><div class="s-icon-wrap"><span class="s-emoji">🏍️</span></div><div class="s-name">Moto Sports</div><div class="s-desc">Throttle control, track techniques and safety training for young riders.</div></div>
-    <div class="sport-card"><div class="s-icon-wrap"><span class="s-emoji">🏊</span></div><div class="s-name">Swimming</div><div class="s-desc">All strokes — freestyle to butterfly — with endurance and technique focus.</div></div>
-    <div class="sport-card"><div class="s-icon-wrap"><span class="s-emoji">🏓</span></div><div class="s-name">Table Tennis</div><div class="s-desc">Fast-paced reflexes, spin mastery and tournament-ready match play.</div></div>
-    <div class="sport-card"><div class="s-icon-wrap"><span class="s-emoji">🤸</span></div><div class="s-name">Kho-Kho</div><div class="s-desc">Speed, agility and team coordination in India's beloved traditional sport.</div></div>
-    <div class="sport-card"><div class="s-icon-wrap"><span class="s-emoji">⚽</span></div><div class="s-name">Football</div><div class="s-desc">Ball control, tactical positioning and team gameplay from grassroots to glory.</div></div>
-    <div class="sport-card"><div class="s-icon-wrap"><span class="s-emoji">🏏</span></div><div class="s-name">Cricket</div><div class="s-desc">Batting, bowling and fielding drills built for school to state-level competition.</div></div>
-    <div class="sport-card"><div class="s-icon-wrap"><span class="s-emoji">🏀</span></div><div class="s-name">Basketball</div><div class="s-desc">Dribbling, shooting and defensive play for aspiring court champions.</div></div>
-    <div class="sport-card"><div class="s-icon-wrap"><span class="s-emoji">🏸</span></div><div class="s-name">Badminton</div><div class="s-desc">Footwork, shuttle control and match strategy for singles and doubles play.</div></div>
-    <div class="sport-card"><div class="s-icon-wrap"><span class="s-emoji">🤼</span></div><div class="s-name">Kabaddi</div><div class="s-desc">Strength, breath control and raiding techniques in this high-energy contact sport.</div></div>
-    <div class="sport-card"><div class="s-icon-wrap"><span class="s-emoji">🥋</span></div><div class="s-name">Karate</div><div class="s-desc">Ryu Karate discipline, kata forms, and sparring with certified instructors.</div></div>
-    <div class="sport-card"><div class="s-icon-wrap"><span class="s-emoji">🚴</span></div><div class="s-name">Cycling</div><div class="s-desc">Road technique, stamina building and competitive cycling coaching.</div></div>
-    <div class="sport-card"><div class="s-icon-wrap"><span class="s-emoji">🏹</span></div><div class="s-name">Archery</div><div class="s-desc">Focus, form and precision shooting — traditional and recurve bow training.</div></div>
-    <div class="sport-card"><div class="s-icon-wrap"><span class="s-emoji">🛹</span></div><div class="s-name">Rollball</div><div class="s-desc">India's fastest-growing sport — skating combined with handball on a unique court.</div></div>
-    <div class="sport-card"><div class="s-icon-wrap"><span class="s-emoji">🎯</span></div><div class="s-name">Aeroskateball</div><div class="s-desc">Aerial skating skills and ball play — a dynamic, crowd-thrilling discipline.</div></div>
+  <div class="section-inner">
+    <div class="center" style="margin-bottom:8px">
+      <div class="eyebrow">Our Programs</div>
+      <div class="divider"></div>
+      <h2 class="sec-title">16 World-Class <em>Sports</em></h2>
+      <p class="sec-desc">Professional coaching with focus on technical skills, strategy, and individual development — from beginner to national-level champions.</p>
+    </div>
+    <div class="sports-grid reveal">
+      <div class="sport-card"><div class="s-icon-wrap"><svg viewBox="0 0 24 24" fill="none"><circle cx="7" cy="18" r="2" stroke="#1565C0" stroke-width="1.6"/><circle cx="17" cy="18" r="2" stroke="#1565C0" stroke-width="1.6"/><path d="M4 20h20M9 12l3-6 3 6" stroke="#1565C0" stroke-width="1.6"/></svg></div><div class="s-name">Roller Skating</div><div class="s-desc">Speed, balance &amp; precision on wheels — beginner glides to championship level.</div></div>
+      <div class="sport-card"><div class="s-icon-wrap"><svg viewBox="0 0 24 24" fill="none"><path d="M4 20 14 6M14 6l6 2-2 6" stroke="#1565C0" stroke-width="1.6" stroke-linecap="round"/><circle cx="9" cy="16" r="1.6" fill="#1565C0"/></svg></div><div class="s-name">Hockey</div><div class="s-desc">Team strategy, stickwork and agility training for competitive play.</div></div>
+      <div class="sport-card"><div class="s-icon-wrap"><svg viewBox="0 0 24 24" fill="none"><circle cx="7" cy="18" r="2.4" stroke="#1565C0" stroke-width="1.6"/><circle cx="17" cy="18" r="2.4" stroke="#1565C0" stroke-width="1.6"/><path d="M7 18h10l-2-8H9Z" stroke="#1565C0" stroke-width="1.6" stroke-linejoin="round"/></svg></div><div class="s-name">Moto Sports</div><div class="s-desc">Throttle control, track techniques and safety training for young riders.</div></div>
+      <div class="sport-card"><div class="s-icon-wrap"><svg viewBox="0 0 24 24" fill="none"><path d="M3 15c1.5-1.5 3-1.5 4.5 0s3 1.5 4.5 0 3-1.5 4.5 0 3 1.5 4.5 0" stroke="#1565C0" stroke-width="1.6"/><circle cx="12" cy="8" r="2.6" stroke="#1565C0" stroke-width="1.6"/></svg></div><div class="s-name">Swimming</div><div class="s-desc">All strokes — freestyle to butterfly — with endurance and technique focus.</div></div>
+      <div class="sport-card"><div class="s-icon-wrap"><svg viewBox="0 0 24 24" fill="none"><ellipse cx="9" cy="9" rx="4" ry="5" transform="rotate(-30 9 9)" stroke="#1565C0" stroke-width="1.6"/><path d="M12 12l6 6" stroke="#1565C0" stroke-width="1.6"/><circle cx="19" cy="19" r="1.6" fill="#1565C0"/></svg></div><div class="s-name">Table Tennis</div><div class="s-desc">Fast-paced reflexes, spin mastery and tournament-ready match play.</div></div>
+      <div class="sport-card"><div class="s-icon-wrap"><svg viewBox="0 0 24 24" fill="none"><path d="M4 8c4 3 12 3 16 0M4 16c4-3 12-3 16 0" stroke="#1565C0" stroke-width="1.6"/></svg></div><div class="s-name">Kho-Kho</div><div class="s-desc">Speed, agility and team coordination in India's beloved traditional sport.</div></div>
+      <div class="sport-card"><div class="s-icon-wrap"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="#1565C0" stroke-width="1.6"/><path d="M4 12h16M12 4c2 2.5 2 15.5 0 16M12 4c-2 2.5-2 15.5 0 16" stroke="#1565C0" stroke-width="1.3"/></svg></div><div class="s-name">Football</div><div class="s-desc">Ball control, tactical positioning and team gameplay from grassroots to glory.</div></div>
+      <div class="sport-card"><div class="s-icon-wrap"><svg viewBox="0 0 24 24" fill="none"><path d="M6 18 16 8" stroke="#1565C0" stroke-width="2" stroke-linecap="round"/><rect x="15" y="4" width="5" height="5" rx="1" transform="rotate(45 17.5 6.5)" stroke="#1565C0" stroke-width="1.6"/></svg></div><div class="s-name">Cricket</div><div class="s-desc">Batting, bowling and fielding drills built for school to state-level competition.</div></div>
+      <div class="sport-card"><div class="s-icon-wrap"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="#1565C0" stroke-width="1.6"/><path d="M4 12h16M12 4v16" stroke="#1565C0" stroke-width="1.3"/></svg></div><div class="s-name">Basketball</div><div class="s-desc">Dribbling, shooting and defensive play for aspiring court champions.</div></div>
+      <div class="sport-card"><div class="s-icon-wrap"><svg viewBox="0 0 24 24" fill="none"><ellipse cx="12" cy="12" rx="3" ry="8" stroke="#1565C0" stroke-width="1.6"/><path d="M9 12h6" stroke="#1565C0" stroke-width="1.6"/></svg></div><div class="s-name">Badminton</div><div class="s-desc">Footwork, shuttle control and match strategy for singles and doubles play.</div></div>
+      <div class="sport-card"><div class="s-icon-wrap"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12c2-4 6-6 8-6M20 12c-2 4-6 6-8 6M4 12l4 3M20 12l-4-3" stroke="#1565C0" stroke-width="1.6"/></svg></div><div class="s-name">Kabaddi</div><div class="s-desc">Strength, breath control and raiding techniques in this high-energy sport.</div></div>
+      <div class="sport-card"><div class="s-icon-wrap"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3 5 6v6c0 5 3 7.5 7 9 4-1.5 7-4 7-9V6l-7-3Z" stroke="#1565C0" stroke-width="1.6"/></svg></div><div class="s-name">Karate</div><div class="s-desc">Ryu Karate discipline, kata forms, and sparring with certified instructors.</div></div>
+      <div class="sport-card"><div class="s-icon-wrap"><svg viewBox="0 0 24 24" fill="none"><circle cx="6" cy="17" r="3" stroke="#1565C0" stroke-width="1.6"/><circle cx="18" cy="17" r="3" stroke="#1565C0" stroke-width="1.6"/><path d="M6 17 10 8h4l4 9M10 8l3 5" stroke="#1565C0" stroke-width="1.6"/></svg></div><div class="s-name">Cycling</div><div class="s-desc">Road technique, stamina building and competitive cycling coaching.</div></div>
+      <div class="sport-card"><div class="s-icon-wrap"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="#1565C0" stroke-width="1.4"/><circle cx="12" cy="12" r="4.5" stroke="#1565C0" stroke-width="1.4"/><path d="M12 12 20 4" stroke="#1565C0" stroke-width="1.6"/></svg></div><div class="s-name">Archery</div><div class="s-desc">Focus, form and precision shooting — traditional and recurve bow training.</div></div>
+      <div class="sport-card"><div class="s-icon-wrap"><svg viewBox="0 0 24 24" fill="none"><circle cx="7" cy="18" r="2" stroke="#1565C0" stroke-width="1.6"/><circle cx="17" cy="18" r="2" stroke="#1565C0" stroke-width="1.6"/><circle cx="12" cy="8" r="3" stroke="#1565C0" stroke-width="1.6"/><path d="M4 20h20" stroke="#1565C0" stroke-width="1.6"/></svg></div><div class="s-name">Rollball</div><div class="s-desc">India's fastest-growing sport — skating combined with handball on court.</div></div>
+      <div class="sport-card"><div class="s-icon-wrap"><svg viewBox="0 0 24 24" fill="none"><path d="M4 18 10 7l4 5 3-4 3 10" stroke="#1565C0" stroke-width="1.6" stroke-linejoin="round"/><circle cx="10" cy="7" r="1.5" fill="#1565C0"/></svg></div><div class="s-name">Aeroskateball</div><div class="s-desc">Aerial skating skills and ball play — a dynamic, crowd-thrilling discipline.</div></div>
+    </div>
   </div>
 </section>
 
-<!-- ── TOURISM ── -->
 <section id="tourism" class="section">
-  <div class="eyebrow center">Adventure Awaits</div>
-  <div class="divider" style="margin:0 auto 24px"></div>
-  <h2 class="sec-title center">Thrilling <em>Tourism</em> Experiences</h2>
-  <p class="sec-desc center" style="margin:0 auto 56px">Curated adventure activities in the heart of Kerala — for families, teams, and thrill-seekers alike.</p>
-  <div class="tour-grid reveal on">
-    <div class="tour-card">
-      <div class="tour-thumb t1">🛶</div>
-      <div class="tour-body">
-        <div class="kayaking.html">Water Adventure</div>
-         <h3>Kayaking</h3>
-         <p>Paddle through Kerala's scenic backwaters and rivers with expert guides. Suitable for all skill levels from beginner to advanced.</p>
-      </div>
-    
+  <div class="section-inner">
+    <div class="center" style="margin-bottom:8px">
+      <div class="eyebrow">Adventure Awaits</div>
+      <div class="divider"></div>
+      <h2 class="sec-title">Thrilling <em>Tourism</em> Experiences</h2>
+      <p class="sec-desc">Curated adventure activities in the heart of Kerala — for families, teams, and thrill-seekers alike.</p>
     </div>
-    <div class="tour-card">
-      <div class="tour-thumb t2">⛵</div>
-      <div class="tour-body">
-        <div class="tour-tag">Water Adventure</div>
-        <h3>Boating</h3>
-        <p>Serene boating journeys across tranquil lakes and backwaters, immersed in Kerala's breathtaking natural beauty.</p>
+    <div class="tour-grid reveal">
+      <div class="tour-card">
+        <div class="tour-thumb t1"><svg viewBox="0 0 24 24" fill="none"><path d="M3 15c3-2 15-2 18 0M6 15V9l6-4 6 4v6" stroke="white" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 5v6" stroke="white" stroke-width="1.6"/></svg></div>
+        <div class="tour-body"><span class="tour-tag">Water Adventure</span><h3>Kayaking</h3><p>Paddle through Kerala's scenic backwaters and rivers with expert guides. Suitable for all skill levels.</p></div>
       </div>
-    </div>
-    <div class="tour-card">
-      <div class="tour-thumb t3">🌿</div>
-      <div class="tour-body">
-        <div class="tour-tag">Nature Therapy</div>
-        <h3>Mud Tourism</h3>
-        <p>A unique therapeutic experience reconnecting you with the earth — fun, refreshing, and memorable for the whole family.</p>
+      <div class="tour-card">
+        <div class="tour-thumb t2"><svg viewBox="0 0 24 24" fill="none"><path d="M3 17c3-2 15-2 18 0" stroke="white" stroke-width="1.6"/><path d="M6 17 8 9h6l3 8" stroke="white" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 9V4" stroke="white" stroke-width="1.6"/></svg></div>
+        <div class="tour-body"><span class="tour-tag">Water Adventure</span><h3>Boating</h3><p>Serene boating journeys across tranquil lakes and backwaters, immersed in Kerala's natural beauty.</p></div>
+      </div>
+      <div class="tour-card">
+        <div class="tour-thumb t3"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21c-5-3-8-6.5-8-10.5A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 8 4.5C20 14.5 17 18 12 21Z" stroke="white" stroke-width="1.6"/></svg></div>
+        <div class="tour-body"><span class="tour-tag">Nature Therapy</span><h3>Mud Tourism</h3><p>A unique therapeutic experience reconnecting you with the earth — fun and memorable for the whole family.</p></div>
+      </div>
+      <div class="tour-card">
+        <div class="tour-thumb t4"><svg viewBox="0 0 24 24" fill="none"><circle cx="6" cy="17" r="2.5" stroke="white" stroke-width="1.6"/><circle cx="18" cy="17" r="2.5" stroke="white" stroke-width="1.6"/><path d="M6 17 9 9h6l3 8M9 9l3 4" stroke="white" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+        <div class="tour-body"><span class="tour-tag">Extreme Adventure</span><h3>ATV Tourism</h3><p>Ride all-terrain vehicles through rugged trails and lush terrain — pure adrenaline in Kerala's landscape.</p></div>
       </div>
     </div>
-    <div class="tour-card">
-      <div class="tour-thumb t4">🚵</div>
-      <div class="tour-body">
-        <div class="tour-tag">Extreme Adventure</div>
-        <h3>ATV Tourism</h3>
-        <p>Ride all-terrain vehicles through rugged trails and lush terrain — pure adrenaline through Kerala's stunning landscape.</p>
-      </div>
-        </div>
   </div>
 </section>
 
-<!-- ── KEY INSIGHTS ── -->
 <section id="insights" class="section">
-  <div class="ins-wrap">
-    <div class="reveal on">
+  <div class="section-inner ins-wrap">
+    <div class="reveal">
       <div class="eyebrow">Why Choose Us</div>
       <div class="divider"></div>
       <h2 class="sec-title">Our <em>Key Insights</em></h2>
-      <p style="font-size:16px;line-height:1.75;color:var(--muted);margin-bottom:0">What sets Hydra apart — our approach, our coaches, and our unwavering commitment to every student's growth.</p>
+      <p style="font-size:15.5px;line-height:1.75;color:var(--muted)">What sets Hydra apart — our approach, our coaches, and our unwavering commitment to every student's growth.</p>
       <div class="ins-mini-grid">
-        <div class="ins-mini"><div class="ico"></div><h4>Expert Coaches</h4><p>Patient, approachable, and dedicated to every child's milestones.</p></div>
-        <div class="ins-mini"><div class="ico"></div><h4>3 Skill Levels</h4><p>Beginner, Intermediate, and Advanced tracks for every stage.</p></div>
-        <div class="ins-mini"><div class="ico"></div><h4>Tournament Focus</h4><p>Technical training geared towards real competition and success.</p></div>
-        <div class="ins-mini"><div class="ico"></div><h4>Love &amp; Discipline</h4><p>Students get love, coaching, agility training and strengthening.</p></div>
+        <div class="ins-mini"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.4" stroke="#1565C0" stroke-width="1.6"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6" stroke="#1565C0" stroke-width="1.6"/></svg><h4>Expert Coaches</h4><p>Patient and dedicated to every child's milestones.</p></div>
+        <div class="ins-mini"><svg viewBox="0 0 24 24" fill="none"><path d="M5 19V10M12 19V5M19 19v-7" stroke="#1565C0" stroke-width="1.6" stroke-linecap="round"/></svg><h4>3 Skill Levels</h4><p>Beginner, Intermediate, Advanced tracks for every stage.</p></div>
+        <div class="ins-mini"><svg viewBox="0 0 24 24" fill="none"><path d="M8 4h8v4a4 4 0 0 1-8 0V4Z" stroke="#1565C0" stroke-width="1.6"/><path d="M10 17h4M12 13v6" stroke="#1565C0" stroke-width="1.6"/></svg><h4>Tournament Focus</h4><p>Technical training geared to real competition.</p></div>
+        <div class="ins-mini"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21c-5-3-8-6.5-8-10.5A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 8 4.5C20 14.5 17 18 12 21Z" stroke="#1565C0" stroke-width="1.6"/></svg><h4>Love &amp; Discipline</h4><p>Coaching, agility training and strengthening.</p></div>
       </div>
-      </div>
-    <ul class="ins-list reveal on" style="transition-delay:0.14s">
-      <li class="ins-item"><span class="ico"></span>Professional coaching in Roller Skating, Kho-Kho, Boxing, Ryu Karate, Basketball, Volleyball, Drop Roball, Football, and Table Tennis.</li>
-      <li class="ins-item"><span class="ico"></span>Training focused on technical aspects, tournaments, and competitive strategies.</li>
-      <li class="ins-item"><span class="ico"></span>Friendly coaches who ensure kids enjoy fun-filled, focused training classes.</li>
-      <li class="ins-item"><span class="ico"></span>Students receive agility training, technical knowledge, and strengthening exercises.</li>
-      <li class="ins-item"><span class="ico"></span>Patient coaching with individual attention given to each and every child.</li>
-      <li class="ins-item"><span class="ico"></span>Motivating and encouraging atmosphere to bring out the best in every student.</li>
-      <li class="ins-item"><span class="ico"></span>Academic classes at Beginner, Intermediate, and Advanced levels to match every student's pace.</li>
+    </div>
+    <ul class="ins-list reveal" style="transition-delay:0.12s">
+      <li class="ins-item"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Professional coaching in Roller Skating, Kho-Kho, Boxing, Ryu Karate, Basketball, Volleyball, Rollball, Football, and Table Tennis.</li>
+      <li class="ins-item"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Training focused on technical aspects, tournaments, and competitive strategies.</li>
+      <li class="ins-item"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Friendly coaches who ensure kids enjoy fun-filled, focused training classes.</li>
+      <li class="ins-item"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Students receive agility training, technical knowledge, and strengthening exercises.</li>
+      <li class="ins-item"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Patient coaching with individual attention given to every child.</li>
+      <li class="ins-item"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Motivating, encouraging atmosphere to bring out the best in every student.</li>
+      <li class="ins-item"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Academic classes at Beginner, Intermediate, and Advanced levels to match every pace.</li>
     </ul>
   </div>
 </section>
 
-<!-- ── CONTACT ── -->
 <section id="contact" class="section">
-  <div style="max-width:1100px;margin:0 auto 56px;text-align:center">
-    <div class="eyebrow center">Get In Touch</div>
-    <div class="divider" style="margin:0 auto 24px"></div>
-    <h2 class="sec-title">Start Your <em>Journey</em> Today</h2>
-    <p class="sec-desc center" style="margin:0 auto">Ready to join a world-record-setting sports family? Reach out and we'll guide you every step of the way.</p>
-  </div>
-  <div class="con-grid reveal">
-    <div class="con-cards">
-      <div class="con-card"><div class="con-card-ico">📍</div><div><h4>Our Location</h4><p>Hydra Sports &amp; Tourism Pvt. Ltd.<br>Kerala, India</p></div></div>
-      <div class="con-card"><div class="con-card-ico">📞</div><div><h4>Phone</h4><p><a href="tel:+918714520362" style="color:inherit;text-decoration:none">+91 87145 20362</a></p></div></div>
-      <div class="con-card"><div class="con-card-ico">📧</div><div><h4>Email</h4><p>info@hydrasports.in</p></div></div>
-      <div class="con-card"><div class="con-card-ico">🕐</div><div><h4>Working Hours</h4><p>Mon – Sat: 6:00 AM – 8:00 PM<br>Sunday: 7:00 AM – 6:00 PM</p></div></div>
-       </div>
-    <div class="con-form">
-      <div class="frow">
-        <div class="fg"><label>First Name</label><input type="text" placeholder="e.g. Arjun"></div>
-        <div class="fg"><label>Last Name</label><input type="text" placeholder="e.g. Kumar"></div>
+  <div class="section-inner">
+    <div class="center" style="margin-bottom:8px">
+      <div class="eyebrow">Get In Touch</div>
+      <div class="divider"></div>
+      <h2 class="sec-title">Start Your <em>Journey</em> Today</h2>
+      <p class="sec-desc">Ready to join a world-record-setting sports family? Reach out and we'll guide you every step of the way.</p>
+    </div>
+    <div class="con-grid reveal">
+      <div class="con-cards">
+        <div class="con-card"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.5 7-11.5A7 7 0 0 0 5 9.5C5 14.5 12 21 12 21Z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9.5" r="2.2" stroke="currentColor" stroke-width="1.6"/></svg><div><h4>Our Location</h4><p>Hydra Sports &amp; Tourism Pvt. Ltd.<br>Kerala, India</p></div></div>
+        <div class="con-card"><svg viewBox="0 0 24 24" fill="none"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2C10 21 3 14 3 6a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.5"/></svg><div><h4>Phone</h4><p><a href="tel:+918714520362">+91 87145 20362</a></p></div></div>
+        <div class="con-card"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.6"/></svg><div><h4>Email</h4><p>info@hydrasports.in</p></div></div>
+        <div class="con-card"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l4 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><div><h4>Working Hours</h4><p>Mon – Sat: 6:00 AM – 8:00 PM<br>Sunday: 7:00 AM – 6:00 PM</p></div></div>
       </div>
-      <div class="fg"><label>Email Address</label><input type="email" placeholder="you@email.com"></div>
-      <div class="fg"><label>Phone</label><input type="tel" placeholder="+91 87145 20362"></div>
-      <div class="fg">
-        <label>Interested In</label>
-        <select>
-          <option value="">Select a program…</option>
-          <optgroup label="🏅 Sports">
-            <option>Roller Skating</option><option>Hockey</option><option>Moto Sports</option>
-            <option>Swimming</option><option>Table Tennis</option><option>Kho-Kho</option>
-            <option>Football</option><option>Cricket</option><option>Basketball</option>
-            <option>Badminton</option><option>Kabaddi</option><option>Karate</option>
-            <option>Cycling</option><option>Archery</option><option>Rollball</option>
-            <option>Aeroskateball</option>
-          </optgroup>
-          <optgroup label="🌿 Tourism">
-            <option>Kayaking</option><option>Boating</option>
-            <option>Mud Tourism</option><option>ATV Tourism</option>
-          </optgroup>
-        </select>
-      </div>
-      <div class="fg"><label>Message</label><textarea placeholder="Tell us about your goals or enquiry…"></textarea></div>
-      <button class="btn-send" id="sendBtn">Send Message →</button>
-      </div>
+      <form class="con-form" id="contactForm">
+        <div class="frow">
+          <div class="fg"><label for="fname">First Name</label><input id="fname" type="text" placeholder="e.g. Arjun" required></div>
+          <div class="fg"><label for="lname">Last Name</label><input id="lname" type="text" placeholder="e.g. Kumar" required></div>
+        </div>
+        <div class="fg"><label for="femail">Email Address</label><input id="femail" type="email" placeholder="you@email.com" required></div>
+        <div class="fg"><label for="fphone">Phone</label><input id="fphone" type="tel" placeholder="+91 87145 20362"></div>
+        <div class="fg">
+          <label for="finterest">Interested In</label>
+          <select id="finterest">
+            <option value="">Select a program…</option>
+            <optgroup label="Sports">
+              <option>Roller Skating</option><option>Hockey</option><option>Moto Sports</option>
+              <option>Swimming</option><option>Table Tennis</option><option>Kho-Kho</option>
+              <option>Football</option><option>Cricket</option><option>Basketball</option>
+              <option>Badminton</option><option>Kabaddi</option><option>Karate</option>
+              <option>Cycling</option><option>Archery</option><option>Rollball</option>
+              <option>Aeroskateball</option>
+            </optgroup>
+            <optgroup label="Tourism">
+              <option>Kayaking</option><option>Boating</option>
+              <option>Mud Tourism</option><option>ATV Tourism</option>
+            </optgroup>
+          </select>
+        </div>
+        <div class="fg"><label for="fmsg">Message</label><textarea id="fmsg" placeholder="Tell us about your goals or enquiry…"></textarea></div>
+        <button type="submit" class="btn-send" id="sendBtn">Send Message <span aria-hidden="true">→</span></button>
+        <p class="form-note" id="formNote">We usually respond within one business day.</p>
+      </form>
+    </div>
   </div>
 </section>
 
-<!-- ── FOOTER ── -->
 <footer>
   <div class="foot-grid">
-    <div class="foot-brand">
+    <div>
       <div class="foot-logo-row">
+        <img src="logo.png" alt="Hydra Sports & Tourism logo" width="44" height="44" style="object-fit:contain">
         <div>
           <div class="foot-brand-name">HYDRA</div>
           <div class="foot-brand-sub">Sports &amp; Tourism Pvt. Ltd.</div>
@@ -653,89 +480,95 @@ footer{background:#07152B;color:white;padding:72px 6% 36px}
       </div>
       <p>Inspiring and training young talents to achieve excellence in sports through discipline, dedication, and teamwork. Your champions, our pride.</p>
       <div class="foot-socials">
-        <a class="s-btn" href="https://hydrasportsandtourismpvtltd.com/#">📘</a>
-        <a class="s-btn" href="https://www.instagram.com/hydra_roller_skating_club/" target="_blank" rel="noopener" title="Instagram">📸</a>
-        <a class="s-btn" href="https://hydrasportsandtourismpvtltd.com/#">🎥</a>
-        <a class="s-btn" href="https://hydrasportsandtourismpvtltd.com/#">🐦</a>
+        <a class="s-btn" href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none"><path d="M14 9h3V6h-3c-2 0-3 1.3-3 3.2V12H9v3h2v6h3v-6h2.5l.5-3H14V9.6c0-.4.2-.6.6-.6Z" fill="#F9A825"/></svg></a>
+        <a class="s-btn" href="https://www.instagram.com/hydra_roller_skating_club/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="#F9A825" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="#F9A825" stroke-width="1.6"/><circle cx="17.2" cy="6.8" r="1" fill="#F9A825"/></svg></a>
+        <a class="s-btn" href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="12" rx="3" stroke="#F9A825" stroke-width="1.6"/><path d="M10.5 9.5v5l4-2.5Z" fill="#F9A825"/></svg></a>
+        <a class="s-btn" href="#" aria-label="Twitter / X"><svg viewBox="0 0 24 24" fill="none"><path d="M5 5l14 14M19 5 5 19" stroke="#F9A825" stroke-width="1.8" stroke-linecap="round"/></svg></a>
       </div>
     </div>
     <div class="foot-col">
       <h5>Quick Links</h5>
       <ul>
-        <li><a href="https://hydrasportsandtourismpvtltd.com/#home">Home</a></li>
-        <li><a href="https://hydrasportsandtourismpvtltd.com/#about">About Us</a></li>
-        <li><a href="https://hydrasportsandtourismpvtltd.com/#sports">Sports</a></li>
-        <li><a href="https://hydrasportsandtourismpvtltd.com/#tourism">Tourism</a></li>
-        <li><a href="https://hydrasportsandtourismpvtltd.com/#achievements">Achievements</a></li>
-        <li><a href="https://hydrasportsandtourismpvtltd.com/#contact">Contact</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#sports">Sports</a></li>
+        <li><a href="#tourism">Tourism</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
     <div class="foot-col">
       <h5>Our Sports</h5>
       <ul>
-        <li><a href="https://hydrasportsandtourismpvtltd.com/#sports">Roller Skating</a></li>
-        <li><a href="https://hydrasportsandtourismpvtltd.com/#sports">Football</a></li>
-        <li><a href="https://hydrasportsandtourismpvtltd.com/#sports">Cricket</a></li>
-        <li><a href="https://hydrasportsandtourismpvtltd.com/#sports">Basketball</a></li>
-        <li><a href="https://hydrasportsandtourismpvtltd.com/#sports">Karate</a></li>
-        <li><a href="https://hydrasportsandtourismpvtltd.com/#sports">Badminton</a></li>
-        <li><a href="https://hydrasportsandtourismpvtltd.com/#sports">&amp; 10 More Sports</a></li>
+        <li><a href="#sports">Roller Skating</a></li>
+        <li><a href="#sports">Football</a></li>
+        <li><a href="#sports">Cricket</a></li>
+        <li><a href="#sports">Basketball</a></li>
+        <li><a href="#sports">Karate</a></li>
+        <li><a href="#sports">Badminton</a></li>
+        <li><a href="#sports">&amp; 10 More Sports</a></li>
       </ul>
     </div>
     <div class="foot-col">
       <h5>Find Us</h5>
-      <div class="foot-info">
-        <div class="fi"><span class="fi-ico">📍</span><div class="fi-text"><strong>Address</strong>Kerala, India</div></div>
-        <div class="fi"><span class="fi-ico">📞</span><div class="fi-text"><strong>Phone</strong>+91 87145 20362</div></div>
-        <div class="fi"><span class="fi-ico">📧</span><div class="fi-text"><strong>Email</strong>info@hydrasports.in</div></div>
-        <div class="fi"><span class="fi-ico">🕐</span><div class="fi-text"><strong>Hours</strong>Mon–Sat 6AM–8PM · Sun 7AM–6PM</div></div>
+      <div>
+        <div class="fi"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.5 7-11.5A7 7 0 0 0 5 9.5C5 14.5 12 21 12 21Z" stroke="currentColor" stroke-width="1.6"/></svg><div class="fi-text"><strong>Address</strong>Kerala, India</div></div>
+        <div class="fi"><svg viewBox="0 0 24 24" fill="none"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2C10 21 3 14 3 6a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.5"/></svg><div class="fi-text"><strong>Phone</strong>+91 87145 20362</div></div>
+        <div class="fi"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.6"/></svg><div class="fi-text"><strong>Email</strong>info@hydrasports.in</div></div>
+        <div class="fi"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l4 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><div class="fi-text"><strong>Hours</strong>Mon–Sat 6AM–8PM · Sun 7AM–6PM</div></div>
       </div>
     </div>
-     </div>
+  </div>
   <div class="foot-bottom">
-    <div>© 2024 <span>Hydra Sports &amp; Tourism Pvt. Ltd.</span> — All rights reserved.</div>
+    <div>© 2026 <span>Hydra Sports &amp; Tourism Pvt. Ltd.</span> — All rights reserved.</div>
     <div>Inspiring Champions · Building Futures</div>
-    </div>
-    </footer>
+  </div>
+</footer>
 
 <script>
-// ── Inject logo as base64 ──
-(function(){
-  const src = 'data:image/png;base64,' + b64;
-  document.getElementById('navLogoImg').src = src;
-  document.getElementById('heroLogoImg').src = src;
-  document.getElementById('footLogoImg').src = src;
-})();
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('on'); obs.unobserve(e.target); } });
+  }, {threshold:0.12});
+  reveals.forEach(r => obs.observe(r));
 
-// ── Scroll reveal ──
-const reveals = document.querySelectorAll('.reveal');
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('on'); obs.unobserve(e.target); } });
-},{threshold:0.1});
-reveals.forEach(r => obs.observe(r));
-
-// ── Nav shadow on scroll ──
-window.addEventListener('scroll', () => {
-  document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 40);
-  let cur = '';
-  document.querySelectorAll('section[id]').forEach(s => {
-    if(window.scrollY >= s.offsetTop - 110) cur = s.id;
+  // Nav shadow + active link on scroll
+  const navEl = document.getElementById('mainNav');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    navEl.classList.toggle('scrolled', window.scrollY > 40);
+    let cur = 'home';
+    document.querySelectorAll('section[id]').forEach(s => {
+      if (window.scrollY >= s.offsetTop - 110) cur = s.id;
+    });
+    navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + cur));
   });
-  document.querySelectorAll('.nav-links a').forEach(a => {
-    a.style.color = a.getAttribute('href') === '#'+cur ? 'var(--blue)' : '';
+
+  // Mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const navLinksList = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => navLinksList.classList.toggle('open'));
+  navLinksList.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinksList.classList.remove('open')));
+
+  // Contact form (front-end only demo)
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const btn = document.getElementById('sendBtn');
+    const note = document.getElementById('formNote');
+    btn.innerHTML = '✓ Message Sent!';
+    btn.style.background = 'linear-gradient(135deg,#66BB6A,#2E7D32)';
+    btn.style.color = 'white';
+    note.textContent = "Thanks — we'll get back to you within one business day.";
+    setTimeout(() => {
+      btn.innerHTML = 'Send Message <span aria-hidden="true">→</span>';
+      btn.style.background = '';
+      btn.style.color = '';
+      note.textContent = 'We usually respond within one business day.';
+      this.reset();
+    }, 3500);
   });
-});
+</script>
 
-// ── Form submit ──
-document.getElementById('sendBtn').addEventListener('click', function(){
-  this.textContent = '✓ Message Sent!';
-  this.style.background = 'linear-gradient(135deg,#4CAF50,#2E7D32)';
-  setTimeout(() => {
-    this.textContent = 'Send Message →';
-    this.style.background = '';
-  }, 3000);
-});
-  </script>
-
-
-</div></section></body></html>
+</body>
+</html>
