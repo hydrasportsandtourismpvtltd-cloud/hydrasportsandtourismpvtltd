@@ -62,24 +62,38 @@ nav.scrolled{box-shadow:0 4px 40px rgba(13,71,161,0.14)}
 }
 
 /* ── HERO ── */
-#home{min-height:100vh;background:linear-gradient(180deg,#FFFFFF 0%,var(--blue-light) 130%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:140px 5% 80px;position:relative;overflow:hidden}
-#home::after{content:'';position:absolute;width:700px;height:700px;border-radius:50%;border:1px solid rgba(21,101,192,0.08);top:-260px;right:-220px;pointer-events:none}
-#home .ripple{position:absolute;border-radius:50%;border:1px solid rgba(21,101,192,0.06);left:50%;top:50%;transform:translate(-50%,-50%);pointer-events:none}
-.hero-chip{display:inline-flex;align-items:center;gap:8px;background:rgba(21,101,192,0.07);border:1px solid rgba(21,101,192,0.2);border-radius:100px;padding:7px 20px;margin-bottom:32px;font-size:10.5px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--blue-dark);position:relative;z-index:1}
-.chip-dot{width:7px;height:7px;background:var(--gold);border-radius:50%;animation:blink 1.6s ease-in-out infinite}
+#home{
+  min-height:100vh;position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:flex-start;
+  padding:140px 6% 90px;
+  background:
+    linear-gradient(100deg,rgba(255,255,255,0.97) 0%,rgba(255,255,255,0.93) 34%,rgba(255,255,255,0.72) 58%,rgba(255,255,255,0.32) 100%),
+    url('hero-bg.jpg');
+  background-size:cover;background-position:center 25%;background-repeat:no-repeat;
+}
+#home::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,0.1),rgba(255,255,255,0.35) 85%);pointer-events:none}
+.hero-content{position:relative;z-index:1;max-width:640px;text-align:left;margin-right:auto}
+.hero-chip{display:inline-flex;align-items:center;gap:8px;background:rgba(21,101,192,0.08);border:1px solid rgba(21,101,192,0.22);border-radius:100px;padding:7px 20px;margin-bottom:26px;font-size:10.5px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--blue-dark)}
+.chip-dot{width:7px;height:7px;background:var(--gold);border-radius:50%;animation:blink 1.6s ease-in-out infinite;flex-shrink:0}
 @keyframes blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(1.4)}}
-.hero-logo{width:128px;height:128px;margin-bottom:28px;position:relative;z-index:1;animation:floatLogo 4s ease-in-out infinite;filter:drop-shadow(0 10px 30px rgba(13,71,161,0.25))}
-@keyframes floatLogo{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-.hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(58px,11vw,120px);line-height:0.9;color:var(--blue-dark);letter-spacing:5px;position:relative;z-index:1}
-.hero-title .g{background:linear-gradient(135deg,var(--gold),var(--gold-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-tagline{font-size:clamp(11px,1.8vw,15px);font-weight:600;letter-spacing:5px;text-transform:uppercase;color:var(--muted);margin:10px 0 22px;position:relative;z-index:1}
-.hero-desc{max-width:540px;font-size:16px;line-height:1.75;color:var(--muted);margin:0 auto 44px;position:relative;z-index:1}
-.hero-btns{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-bottom:64px;position:relative;z-index:1}
+.hero-logo-sm{width:56px;height:56px;object-fit:contain;margin-bottom:18px;filter:drop-shadow(0 6px 18px rgba(13,71,161,0.18))}
+.hero-h1{line-height:1.15}
+.hero-h1 .brand{display:block;font-family:'Inter',sans-serif;font-size:clamp(13px,1.6vw,16px);font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold-dark);margin-bottom:12px}
+.hero-h1 .sub-line{display:block;font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(34px,5.4vw,64px);line-height:1.12;color:var(--blue-dark)}
+.hero-desc{max-width:520px;margin-right:auto;font-size:16px;line-height:1.75;color:var(--muted);margin-top:22px;margin-bottom:38px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-start}
 .btn-gold,.btn-ghost{padding:15px 36px;border-radius:6px;font-weight:800;font-size:12.5px;letter-spacing:1.5px;text-transform:uppercase;transition:all 0.22s;display:inline-flex;align-items:center;gap:8px}
-.btn-gold{background:linear-gradient(135deg,var(--blue-dark),var(--blue));color:white;box-shadow:0 6px 24px rgba(13,71,161,0.3)}
-.btn-gold:hover{transform:translateY(-3px);box-shadow:0 10px 36px rgba(13,71,161,0.4)}
-.btn-ghost{background:white;color:var(--blue-dark);border:2px solid var(--blue-dark)}
-.btn-ghost:hover{background:var(--blue-dark);color:white}
+.btn-gold{background:linear-gradient(135deg,var(--blue-dark),var(--blue));color:#fff;box-shadow:0 6px 24px rgba(13,71,161,0.3)}
+.btn-gold:hover{transform:translateY(-3px);box-shadow:0 10px 36px rgba(13,71,161,0.42)}
+.btn-ghost{background:#fff;color:var(--gold-dark);border:2px solid var(--gold-dark)}
+.btn-ghost:hover{background:var(--gold-dark);color:#fff;border-color:var(--gold-dark)}
+@media(max-width:760px){
+  #home{justify-content:center;padding:130px 6% 70px}
+  .hero-content{text-align:center;margin:0 auto}
+  .hero-logo-sm{margin:0 auto 18px}
+  .hero-desc{margin:22px auto 34px}
+  .hero-btns{justify-content:center}
+}
 .hero-stats{display:flex;gap:0;border-top:1px solid var(--border);padding-top:40px;flex-wrap:wrap;justify-content:center;position:relative;z-index:1;width:100%;max-width:900px}
 .hero-stat-item{flex:1;min-width:150px;padding:0 28px;border-right:1px solid var(--border);text-align:center}
 .hero-stat-item:last-child{border-right:none}
@@ -288,15 +302,16 @@ footer{background:#07152B;color:white;padding:64px 6% 32px}
 </nav>
 
 <section id="home">
-  <svg class="ripple" width="900" height="900" viewBox="0 0 900 900"><circle cx="450" cy="450" r="380" fill="none" stroke="#1565C0" stroke-opacity="0.05"/><circle cx="450" cy="450" r="300" fill="none" stroke="#1565C0" stroke-opacity="0.05"/></svg>
-  <div class="hero-chip"><span class="chip-dot"></span>Kerala's Premier Sports &amp; Tourism Company</div>
-  <img class="hero-logo" src="logo.png" alt="Hydra Sports & Tourism logo" style="object-fit:contain">
-  <h1 class="hero-title">HYDRA<br><span class="g">SPORTS</span></h1>
-  <p class="hero-tagline">&amp; Tourism Pvt. Ltd.</p>
-  <p class="hero-desc">Training young champions through discipline, dedication, and teamwork. From world-class sports academies to thrilling adventure tourism — Hydra is where legends begin.</p>
-  <div class="hero-btns">
-    <a href="#sports" class="btn-gold">Explore Sports</a>
-    <a href="#tourism" class="btn-ghost">Adventure Tourism</a>
+  <div class="hero-content">
+    <h1 class="hero-h1">
+      <span class="brand">Hydra Sports &amp; Tourism Pvt. Ltd.</span>
+      <span class="sub-line">Malappuram's Premier Sports &amp; Adventure Destination</span>
+    </h1>
+    <p class="hero-desc">Training young champions through discipline, dedication, and teamwork. From world-class sports academies to thrilling adventure tourism — Hydra is where legends begin.</p>
+    <div class="hero-btns">
+      <a href="#sports" class="btn-gold">Explore Sports</a>
+      <a href="#tourism" class="btn-ghost">Adventure Tourism</a>
+    </div>
   </div>
 </section>
 
