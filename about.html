@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us — Hydra Sports &amp; Tourism Pvt. Ltd.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue:#1565C0;--blue-dark:#0D47A1;--blue-mid:#1976D2;--blue-light:#E3F0FF;
+  --gold:#F9A825;--gold-light:#FFD54F;--gold-dark:#E65100;
+  --white:#FFFFFF;--off:#F7F9FC;--text:#0F172A;--muted:#64748B;--border:#E2EAF4;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--white);color:var(--text);overflow-x:hidden;line-height:1.5}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{font-family:inherit;border:none;background:none;cursor:pointer}
+img,svg{display:block}
+a:focus-visible, button:focus-visible{outline:3px solid var(--gold); outline-offset:2px}
+@media (prefers-reduced-motion: reduce){*{animation-duration:0.01ms !important;transition-duration:0.01ms !important}}
+
+/* NAV (shared) */
+nav{position:fixed;top:0;left:0;right:0;z-index:999;height:80px;padding:0 6%;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);box-shadow:0 2px 32px rgba(13,71,161,0.06);transition:box-shadow 0.3s}
+nav.scrolled{box-shadow:0 4px 40px rgba(13,71,161,0.14)}
+.nav-logo{display:flex;align-items:center;gap:12px}
+.nav-brand-name{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:3px;color:var(--blue-dark);display:block}
+.nav-brand-sub{font-size:9.5px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold-dark);display:block}
+.nav-links{display:flex;gap:32px;align-items:center}
+.nav-links a{font-size:12.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--text);position:relative;padding-bottom:3px;transition:color 0.2s}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold-dark));transition:width 0.3s;border-radius:2px}
+.nav-links a:hover{color:var(--blue)}
+.nav-links a:hover::after{width:100%}
+.nav-links a.active{color:var(--blue)}
+.nav-links a.active::after{width:100%}
+.nav-cta{background:linear-gradient(135deg,var(--blue-dark),var(--blue));color:white!important;padding:12px 28px;border-radius:8px;box-shadow:0 4px 16px rgba(13,71,161,0.22);transition:all 0.22s;font-size:12px!important;letter-spacing:1.5px!important;font-weight:800!important}
+.nav-cta::after{content:none}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(13,71,161,0.32);color:white}
+.nav-toggle{display:none;width:32px;height:32px;align-items:center;justify-content:center}
+.nav-toggle span,.nav-toggle span::before,.nav-toggle span::after{content:'';display:block;width:22px;height:2px;background:var(--blue-dark);position:relative;transition:0.2s}
+.nav-toggle span::before{position:absolute;top:-7px}
+.nav-toggle span::after{position:absolute;top:7px}
+@media(max-width:900px){
+  .nav-links{position:fixed;top:80px;left:0;right:0;background:white;flex-direction:column;gap:0;padding:12px 0;border-bottom:1px solid var(--border);transform:translateY(-8px);opacity:0;pointer-events:none;transition:0.2s}
+  .nav-links.open{transform:translateY(0);opacity:1;pointer-events:auto}
+  .nav-links li{width:100%;text-align:center}
+  .nav-links a{display:block;padding:14px 0}
+  .nav-cta{display:inline-block;margin:8px auto}
+  .nav-toggle{display:flex}
+}
+
+/* PAGE HERO */
+.page-hero{padding:168px 6% 90px;text-align:center;background:linear-gradient(180deg,#FFFFFF 0%,var(--blue-light) 130%);position:relative;overflow:hidden}
+.page-hero::after{content:'';position:absolute;width:600px;height:600px;border-radius:50%;border:1px solid rgba(21,101,192,0.08);top:-240px;right:-200px;pointer-events:none}
+.breadcrumb{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:18px;position:relative;z-index:1}
+.breadcrumb a{color:var(--blue-dark)}
+.breadcrumb a:hover{color:var(--gold-dark)}
+.page-hero h1{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(38px,6vw,64px);line-height:1.1;position:relative;z-index:1}
+.page-hero h1 em{font-style:normal;color:var(--blue)}
+.page-hero p{max-width:560px;margin:20px auto 0;font-size:16.5px;color:var(--muted);line-height:1.75;position:relative;z-index:1}
+
+/* SECTION BASE */
+.section{padding:100px 6%}
+.section-inner{max-width:1200px;margin:0 auto}
+.eyebrow{font-size:11px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--gold-dark);margin-bottom:10px}
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(30px,4.2vw,48px);font-weight:900;line-height:1.12;margin-bottom:16px}
+.sec-title em{font-style:normal;color:var(--blue)}
+.sec-desc{font-size:16px;line-height:1.75;color:var(--muted);max-width:600px;margin-bottom:48px}
+.divider{width:52px;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-dark));border-radius:3px;margin-bottom:20px}
+.center{text-align:center}
+.center .divider{margin:0 auto 20px}
+.center .sec-desc{margin:0 auto 48px}
+
+/* STORY */
+#story{background:var(--off)}
+.story-wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.story-copy p{font-size:15.3px;line-height:1.8;color:var(--muted);margin-bottom:16px}
+.story-copy p:last-child{margin-bottom:0}
+.story-quote{margin-top:28px;padding:22px 24px;border-left:3px solid var(--gold);background:#FFF8E1;border-radius:0 12px 12px 0}
+.story-quote p{font-family:'Playfair Display',serif;font-size:16.5px;font-weight:700;color:var(--text);line-height:1.5}
+.story-quote span{display:block;margin-top:10px;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold-dark)}
+.story-panel{display:flex;flex-direction:column;gap:16px}
+.panel-stat{background:white;border:1px solid var(--border);border-radius:14px;padding:24px;display:flex;align-items:center;gap:18px;box-shadow:0 2px 16px rgba(13,71,161,0.04)}
+.panel-stat .n{font-family:'Bebas Neue',sans-serif;font-size:40px;color:var(--blue-dark);min-width:70px}
+.panel-stat .l{font-size:13px;color:var(--muted);line-height:1.5}
+.panel-stat .l strong{display:block;color:var(--text);font-size:14px}
+
+/* MISSION VISION VALUES */
+.mvv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.mvv-card{background:white;border:1px solid var(--border);border-radius:16px;padding:32px 26px;box-shadow:0 2px 16px rgba(13,71,161,0.04);transition:transform 0.25s,box-shadow 0.25s}
+.mvv-card:hover{transform:translateY(-5px);box-shadow:0 14px 36px rgba(13,71,161,0.1)}
+.mvv-icon{width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.mvv-card h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;margin-bottom:10px}
+.mvv-card p{font-size:13.6px;line-height:1.7;color:var(--muted)}
+@media(max-width:900px){.mvv-grid{grid-template-columns:1fr}}
+
+/* TIMELINE */
+#timeline{background:linear-gradient(155deg,#06203E 0%,#0D47A1 50%,#1565C0 100%);color:white;position:relative;overflow:hidden}
+#timeline::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 80% 20%,rgba(249,168,37,0.08),transparent);pointer-events:none}
+#timeline .sec-title{color:white}
+#timeline .sec-title em{color:var(--gold)}
+#timeline .sec-desc{color:rgba(255,255,255,0.65)}
+.tl-track{position:relative;z-index:1}
+.tl-item{display:grid;grid-template-columns:110px 1fr;gap:24px;padding:26px 0;border-top:1px solid rgba(255,255,255,0.12)}
+.tl-item:first-child{border-top:none}
+.tl-year{font-family:'Bebas Neue',sans-serif;font-size:34px;color:var(--gold)}
+.tl-body h4{font-size:16px;font-weight:700;margin-bottom:6px}
+.tl-body p{font-size:13.5px;color:rgba(255,255,255,0.68);line-height:1.65;max-width:640px}
+@media(max-width:700px){.tl-item{grid-template-columns:1fr}.tl-year{margin-bottom:4px}}
+
+/* TEAM */
+#team{background:var(--off)}
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.team-card{background:white;border:1px solid var(--border);border-radius:16px;padding:28px 22px;text-align:center;transition:transform 0.25s,box-shadow 0.25s;box-shadow:0 2px 16px rgba(13,71,161,0.04)}
+.team-card:hover{transform:translateY(-5px);box-shadow:0 14px 36px rgba(13,71,161,0.1)}
+.team-avatar{width:76px;height:76px;border-radius:50%;background:var(--blue-light);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;font-family:'Bebas Neue',sans-serif;font-size:26px;color:var(--blue-dark)}
+.team-card h4{font-size:15px;font-weight:700;margin-bottom:4px}
+.team-card .role{font-size:11.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold-dark);margin-bottom:12px}
+.team-card p{font-size:12.6px;color:var(--muted);line-height:1.6}
+@media(max-width:900px){.team-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.team-grid{grid-template-columns:1fr}}
+
+/* CTA BAND */
+.cta-band{background:linear-gradient(135deg,var(--gold-light),var(--gold));padding:64px 6%;text-align:center}
+.cta-band h2{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(24px,3.4vw,36px);color:var(--text);max-width:640px;margin:0 auto}
+.cta-band .btn-dark{display:inline-flex;margin-top:26px;background:linear-gradient(135deg,var(--blue-dark),var(--blue));color:white;padding:15px 36px;border-radius:8px;font-weight:800;font-size:12.5px;letter-spacing:1.5px;text-transform:uppercase;transition:all 0.22s;box-shadow:0 6px 24px rgba(13,71,161,0.3)}
+.cta-band .btn-dark:hover{transform:translateY(-3px);box-shadow:0 10px 36px rgba(13,71,161,0.4)}
+
+/* FOOTER (shared) */
+footer{background:#07152B;color:white;padding:64px 6% 32px}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:44px;max-width:1200px;margin:0 auto;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,0.08)}
+.foot-logo-row{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.foot-brand-name{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:3px;color:white}
+.foot-brand-sub{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}
+.foot-brand p{font-size:13px;line-height:1.7;color:rgba(255,255,255,0.45);max-width:280px}
+.foot-socials{display:flex;gap:10px;margin-top:18px}
+.s-btn{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;transition:background 0.2s}
+.s-btn svg{width:16px;height:16px}
+.s-btn:hover{background:rgba(249,168,37,0.2)}
+.foot-col h5{font-size:10.5px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.foot-col ul{display:flex;flex-direction:column;gap:9px}
+.foot-col ul li a{font-size:13px;color:rgba(255,255,255,0.48);transition:color 0.2s}
+.foot-col ul li a:hover{color:var(--gold)}
+.fi{display:flex;gap:12px;align-items:flex-start;padding:11px 0;border-bottom:1px solid rgba(255,255,255,0.06)}
+.fi:last-child{border:none}
+.fi svg{width:15px;height:15px;flex-shrink:0;margin-top:2px;color:var(--gold);opacity:0.85}
+.fi-text{font-size:12.5px;color:rgba(255,255,255,0.52);line-height:1.5}
+.fi-text strong{display:block;color:rgba(255,255,255,0.8);font-size:11.5px;margin-bottom:2px}
+.foot-bottom{max-width:1200px;margin:28px auto 0;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:rgba(255,255,255,0.28);flex-wrap:wrap;gap:8px}
+.foot-bottom span{color:var(--gold-dark)}
+
+@media(max-width:900px){.story-wrap,.foot-grid{grid-template-columns:1fr}.foot-grid{gap:32px}}
+
+.reveal{opacity:0;transform:translateY(22px);transition:opacity 0.7s ease,transform 0.7s ease}
+.reveal.on{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<nav id="mainNav">
+  <a href="index.html" class="nav-logo">
+    <img src="logo.png" alt="Hydra Sports & Tourism logo" width="46" height="46" style="object-fit:contain">
+    <div>
+      <span class="nav-brand-name">HYDRA</span>
+      <span class="nav-brand-sub">Sports &amp; Tourism Pvt. Ltd.</span>
+    </div>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="index.html#sports">Sports</a></li>
+    <li><a href="index.html#tourism">Tourism</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Contact Us</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span></button>
+</nav>
+
+<section class="page-hero">
+  <div class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; About Us</div>
+  <h1>Built on discipline.<br>Driven by <em>the sea and the ghats.</em></h1>
+  <p>Hydra Sports &amp; Tourism Pvt. Ltd. began as a single roller-skating rink in Kerala and grew into a record-setting sports academy and adventure tourism company — without ever losing sight of the kid learning to fall, get up, and try again.</p>
+</section>
+
+<section id="story" class="section">
+  <div class="section-inner story-wrap">
+    <div class="story-copy reveal">
+      <div class="eyebrow">Our Story</div>
+      <div class="divider"></div>
+      <h2 class="sec-title">From one rink to <em>16 sports</em></h2>
+      <p>Hydra started with a simple idea: Kerala's kids deserved coaching that took them as seriously as any national academy would. What began as roller-skating lessons for a handful of neighbourhood children has grown into a company running programs across 16 sports and 18+ partner schools.</p>
+      <p>Along the way, we picked up something we didn't set out for — five Guinness World Records and 22 individual record holders. But the achievement we're proudest of is quieter: thousands of first-time athletes who found out they were capable of more than they thought.</p>
+      <p>In parallel, our guides started taking students' families out on the backwaters and hills around us — and that side of the work grew into Hydra Tourism, now offering kayaking, boating, ATV rides and mud tourism across Kerala.</p>
+      <div class="story-quote">
+        <p>"We don't coach sport in isolation from life. Discipline on the court is discipline everywhere else, too."</p>
+        <span>— Hydra Founding Team</span>
+      </div>
+    </div>
+    <div class="story-panel reveal" style="transition-delay:0.1s">
+      <div class="panel-stat">
+        <div class="n">5</div>
+        <div class="l"><strong>Guinness World Records</strong>Set by Hydra athletes across multiple disciplines.</div>
+      </div>
+      <div class="panel-stat">
+        <div class="n">16</div>
+        <div class="l"><strong>Sports programs</strong>From roller skating and football to archery and karate.</div>
+      </div>
+      <div class="panel-stat">
+        <div class="n">18+</div>
+        <div class="l"><strong>Partner schools</strong>Across Kerala running Hydra-coached programs.</div>
+      </div>
+      <div class="panel-stat">
+        <div class="n">4</div>
+        <div class="l"><strong>Tourism experiences</strong>Kayaking, boating, mud tourism and ATV rides.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:white">
+  <div class="section-inner">
+    <div class="center" style="margin-bottom:8px">
+      <div class="eyebrow">What Drives Us</div>
+      <div class="divider"></div>
+      <h2 class="sec-title">Mission, Vision &amp; <em>Values</em></h2>
+      <p class="sec-desc">Three commitments that shape every class we teach and every trip we run.</p>
+    </div>
+    <div class="mvv-grid reveal">
+      <div class="mvv-card">
+        <div class="mvv-icon" style="background:var(--blue-light)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 21c-5-3-8-6.5-8-10.5A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 8 4.5C20 14.5 17 18 12 21Z" stroke="#0D47A1" stroke-width="1.8"/></svg></div>
+        <h3>Mission</h3>
+        <p>To inspire and train young talents to achieve excellence through discipline, dedication, and teamwork — regardless of where they start from.</p>
+      </div>
+      <div class="mvv-card">
+        <div class="mvv-icon" style="background:#FFF8E1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3.4" stroke="#E65100" stroke-width="1.8"/><path d="M2 12c2.5-5 6-7.5 10-7.5S19.5 7 22 12c-2.5 5-6 7.5-10 7.5S4.5 17 2 12Z" stroke="#E65100" stroke-width="1.8"/></svg></div>
+        <h3>Vision</h3>
+        <p>To become a leading sports and tourism company in Kerala — nurturing future champions with strong values and a lifelong love of movement.</p>
+      </div>
+      <div class="mvv-card">
+        <div class="mvv-icon" style="background:#E8F5E9"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#1B5E20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Values</h3>
+        <p>Patience over pressure, individual attention over one-size-fits-all, and honesty about progress — even when it's slow.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="timeline" class="section">
+  <div class="section-inner">
+    <div class="center" style="margin-bottom:8px">
+      <div class="eyebrow">Our Journey</div>
+      <div class="divider"></div>
+      <h2 class="sec-title">Milestones along <em>the way</em></h2>
+      <p class="sec-desc">A quick look at how a single rink grew into a sports and tourism company.</p>
+    </div>
+    <div class="tl-track reveal">
+      <div class="tl-item">
+        <div class="tl-year">Y1</div>
+        <div class="tl-body"><h4>Roller skating rink opens</h4><p>Hydra's first coaching program starts with a handful of students and one discipline: roller skating.</p></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">Y2</div>
+        <div class="tl-body"><h4>Expansion into team sports</h4><p>Football, basketball and cricket coaching added as demand grows beyond the rink.</p></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">Y3</div>
+        <div class="tl-body"><h4>First Guinness World Record</h4><p>A Hydra athlete sets the company's first world record, putting Kerala's academy on the national map.</p></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">Y4</div>
+        <div class="tl-body"><h4>18+ school partnerships</h4><p>Hydra coaching programs are adopted across partner schools throughout Kerala.</p></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">Y5</div>
+        <div class="tl-body"><h4>Hydra Tourism launches</h4><p>Kayaking and boating trips begin, followed by mud tourism and ATV adventures across Kerala's backwaters and hills.</p></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">Today</div>
+        <div class="tl-body"><h4>16 sports, one mission</h4><p>Five Guinness World Records and 22 individual record holders later, Hydra keeps its focus on the next first-time athlete.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="team" class="section">
+  <div class="section-inner">
+    <div class="center" style="margin-bottom:8px">
+      <div class="eyebrow">The People Behind Hydra</div>
+      <div class="divider"></div>
+      <h2 class="sec-title">Coaches &amp; <em>Guides</em></h2>
+      <p class="sec-desc">A small team of certified coaches and tourism guides who've been with Hydra's athletes and travellers since day one.</p>
+    </div>
+    <div class="team-grid reveal">
+      <div class="team-card">
+        <div class="team-avatar">RK</div>
+        <h4>Ravi Kumar</h4>
+        <div class="role">Head Coach, Roller Skating</div>
+        <p>Trained three of Hydra's Guinness record holders across a decade of coaching.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">AN</div>
+        <h4>Anjali Nair</h4>
+        <div class="role">Head Coach, Swimming &amp; Athletics</div>
+        <p>Runs the beginner-to-advanced track system used across every Hydra sport.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">SM</div>
+        <h4>Suresh Menon</h4>
+        <div class="role">Karate &amp; Martial Arts Lead</div>
+        <p>Certified Ryu Karate instructor overseeing kata, sparring and discipline training.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">PT</div>
+        <h4>Priya Thomas</h4>
+        <div class="role">Tourism Operations Lead</div>
+        <p>Designs and leads every kayaking, boating, and ATV route Hydra runs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <h2>Ready to train with Hydra, or explore Kerala with us?</h2>
+  <a href="index.html#contact" class="btn-dark">Get in touch →</a>
+</section>
+
+<footer>
+  <div class="foot-grid">
+    <div>
+      <div class="foot-logo-row">
+        <img src="logo.png" alt="Hydra Sports & Tourism logo" width="44" height="44" style="object-fit:contain">
+        <div>
+          <div class="foot-brand-name">HYDRA</div>
+          <div class="foot-brand-sub">Sports &amp; Tourism Pvt. Ltd.</div>
+        </div>
+      </div>
+      <p>Inspiring and training young talents to achieve excellence in sports through discipline, dedication, and teamwork. Your champions, our pride.</p>
+      <div class="foot-socials">
+        <a class="s-btn" href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none"><path d="M14 9h3V6h-3c-2 0-3 1.3-3 3.2V12H9v3h2v6h3v-6h2.5l.5-3H14V9.6c0-.4.2-.6.6-.6Z" fill="#F9A825"/></svg></a>
+        <a class="s-btn" href="https://www.instagram.com/hydra_roller_skating_club/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="#F9A825" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="#F9A825" stroke-width="1.6"/><circle cx="17.2" cy="6.8" r="1" fill="#F9A825"/></svg></a>
+        <a class="s-btn" href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="12" rx="3" stroke="#F9A825" stroke-width="1.6"/><path d="M10.5 9.5v5l4-2.5Z" fill="#F9A825"/></svg></a>
+        <a class="s-btn" href="#" aria-label="Twitter / X"><svg viewBox="0 0 24 24" fill="none"><path d="M5 5l14 14M19 5 5 19" stroke="#F9A825" stroke-width="1.8" stroke-linecap="round"/></svg></a>
+      </div>
+    </div>
+    <div class="foot-col">
+      <h5>Quick Links</h5>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="index.html#sports">Sports</a></li>
+        <li><a href="index.html#tourism">Tourism</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Our Sports</h5>
+      <ul>
+        <li><a href="index.html#sports">Roller Skating</a></li>
+        <li><a href="index.html#sports">Football</a></li>
+        <li><a href="index.html#sports">Cricket</a></li>
+        <li><a href="index.html#sports">Basketball</a></li>
+        <li><a href="index.html#sports">Karate</a></li>
+        <li><a href="index.html#sports">Badminton</a></li>
+        <li><a href="index.html#sports">&amp; 10 More Sports</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Find Us</h5>
+      <div>
+        <div class="fi"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.5 7-11.5A7 7 0 0 0 5 9.5C5 14.5 12 21 12 21Z" stroke="currentColor" stroke-width="1.6"/></svg><div class="fi-text"><strong>Address</strong>Kerala, India</div></div>
+        <div class="fi"><svg viewBox="0 0 24 24" fill="none"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2C10 21 3 14 3 6a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.5"/></svg><div class="fi-text"><strong>Phone</strong>+91 87145 20362</div></div>
+        <div class="fi"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.6"/></svg><div class="fi-text"><strong>Email</strong>info@hydrasports.in</div></div>
+        <div class="fi"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l4 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><div class="fi-text"><strong>Hours</strong>Mon–Sat 6AM–8PM · Sun 7AM–6PM</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <div>© 2026 <span>Hydra Sports &amp; Tourism Pvt. Ltd.</span> — All rights reserved.</div>
+    <div>Inspiring Champions · Building Futures</div>
+  </div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('on'); obs.unobserve(e.target); } });
+  }, {threshold:0.12});
+  reveals.forEach(r => obs.observe(r));
+
+  const navEl = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => navEl.classList.toggle('scrolled', window.scrollY > 40));
+
+  const navToggle = document.getElementById('navToggle');
+  const navLinksList = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => navLinksList.classList.toggle('open'));
+  navLinksList.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinksList.classList.remove('open')));
+</script>
+
+</body>
+</html>
