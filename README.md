@@ -1,11 +1,4 @@
-# Hydra Sports & Tourism Pvt. Ltd.
-Hydra Sports & Tourism Pvt. Ltd. is Kerala's premier sports academy & adventure tourism agency. It's fully responsive.
-
-## Technology used
-1. HTML5
-2. CSS3
-
-## Live link
-https://hydrasportsandtourismpvtltd.com
-
-<sub>Fathima Hidha</sub>
+Hydra Sports & Tourism Pvt. Ltd.
+Kerala's premier sports academy and adventure tourism platform, built with HTML5 and CSS3 using a fully responsive design.
+Live Link: https://hydrasportsandtourismpvtltd.com
+Developer: #Fathima Hidha.
