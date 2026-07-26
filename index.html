@@ -610,7 +610,7 @@ footer{background:#07152B;color:white;padding:64px 6% 32px}
     <div class="foot-col">
       <h5>Our Sports</h5>
       <ul>
-        <li><a href="./roller-skating.html">Roller Skating</a></li>
+        <li><a href="roller-skating.html">Roller Skating</a></li>
         <li><a href="#sports">Football</a></li>
         <li><a href="#sports">Cricket</a></li>
         <li><a href="#sports">Basketball</a></li>
@@ -639,7 +639,7 @@ footer{background:#07152B;color:white;padding:64px 6% 32px}
   // Sports data + card rendering (matching reference "service card" style:
   // photo-style header, circular icon badge overlapping the image, title, desc, Learn more link)
   const sportsData = [
-    {name:"Roller Skating", desc:"Speed, balance & precision on wheels — beginner glides to championship level.", cls:"st1", icon:'<circle cx="7" cy="18" r="2" stroke="#1565C0" stroke-width="1.6"/><circle cx="17" cy="18" r="2" stroke="#1565C0" stroke-width="1.6"/><path d="M4 20h20M9 12l3-6 3 6" stroke="#1565C0" stroke-width="1.6"/>'},
+    {name:"Roller Skating", desc:"Speed, balance & precision on wheels — beginner glides to championship level.", cls:"st1", link:"roller-skating.html", icon:'<circle cx="7" cy="18" r="2" stroke="#1565C0" stroke-width="1.6"/><circle cx="17" cy="18" r="2" stroke="#1565C0" stroke-width="1.6"/><path d="M4 20h20M9 12l3-6 3 6" stroke="#1565C0" stroke-width="1.6"/>'},
     {name:"Hockey", desc:"Team strategy, stickwork and agility training for competitive play.", cls:"st2", icon:'<path d="M4 20 14 6M14 6l6 2-2 6" stroke="#1565C0" stroke-width="1.6" stroke-linecap="round"/><circle cx="9" cy="16" r="1.6" fill="#1565C0"/>'},
     {name:"Moto Sports", desc:"Throttle control, track techniques and safety training for young riders.", cls:"st3", icon:'<circle cx="7" cy="18" r="2.4" stroke="#1565C0" stroke-width="1.6"/><circle cx="17" cy="18" r="2.4" stroke="#1565C0" stroke-width="1.6"/><path d="M7 18h10l-2-8H9Z" stroke="#1565C0" stroke-width="1.6" stroke-linejoin="round"/>'},
     {name:"Swimming", desc:"All strokes — freestyle to butterfly — with endurance and technique focus.", cls:"st4", icon:'<path d="M3 15c1.5-1.5 3-1.5 4.5 0s3 1.5 4.5 0 3-1.5 4.5 0 3 1.5 4.5 0" stroke="#1565C0" stroke-width="1.6"/><circle cx="12" cy="8" r="2.6" stroke="#1565C0" stroke-width="1.6"/>'},
@@ -685,7 +685,7 @@ footer{background:#07152B;color:white;padding:64px 6% 32px}
       <div class="sport-body">
         <div class="s-name">${s.name}</div>
         <div class="s-desc">${s.desc}</div>
-        <a href="#contact" class="s-more">Learn more <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="${s.link || '#contact'}" class="s-more">Learn more <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
     </div>
   `).join('');
